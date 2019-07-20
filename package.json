@@ -7,9 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-native-community/async-storage": "^1.5.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.1",
     "help": "^3.0.2",
+    "ios-deploy": "^1.9.4",
     "jest-cli": "^24.5.0",
     "jest-serializer-enzyme": "^1.0.0",
     "react": "16.6.3",
