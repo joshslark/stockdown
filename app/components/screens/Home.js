@@ -12,7 +12,10 @@ import {
   Alert,
   View,
   FlatList,
+  ScrollView,
 } from 'react-native';
+
+import {ListItem} from 'react-native-elements';
 
 import QRCodeScanner from 'react-native-qrcode-scanner';
 
@@ -132,6 +135,24 @@ export default class Home extends Component {
               </View>
             )}
           />
+          <ScrollView>
+            <ListItem
+              checkBox={{checked: false}}
+              // Description
+              title={'Description'}
+              // Sku
+              subtitle={'1001-001-100'}
+              // Amount in stock
+              badge={{value: '12'}}
+              bottomDivider
+            />
+            <ListItem
+              title={'Description2'}
+              subtitle={'1001-001-101'}
+              badge={{value: '1'}}
+              bottomDivider
+            />
+          </ScrollView>
         </View>
       </View>
     );
