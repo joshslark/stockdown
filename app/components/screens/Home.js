@@ -104,55 +104,49 @@ export default class Home extends Component {
               Aisle 09
             </Text>
           </View>
-          <FlatList
-            contentContainerStyle={{
-              flex: 1,
-              justifyContent: 'flex-start',
-              backgroundColor: 'rgb(172,122,66)',
-            }}
-            data={[
-              {sku: '1001-001-100'},
-              {sku: '1001-001-100'},
-              {sku: '1001-002-102'},
-            ]}
-            extraData={this.state.scanned}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item}) => (
-              <View style={{backgroundColor: 'rgb(235,232,215)'}}>
-                <View
-                  style={{
-                    height: 50,
-                    width: '95%',
-                    alignSelf: 'flex-end',
-                    borderBottomColor: 'grey',
-                    borderBottomWidth: StyleSheet.hairlineWidth,
-                    paddingLeft: 10,
-                    justifyContent: 'center',
-                    backgroundColor: 'rgb(235,232,215)',
-                  }}>
-                  <Text style={{color: 'black'}}>{item.sku}</Text>
+          <View style={{flex: 1, width: '100%'}}>
+            <FlatList
+              contentContainerStyle={{
+                backgroundColor: 'rgb(172,122,66)',
+              }}
+              data={[
+                {sku: '1001-001-100'},
+                {sku: '1001-001-100'},
+                {sku: '1001-002-102'},
+                {sku: '1001-001-100'},
+                {sku: '1001-001-100'},
+                {sku: '1001-001-100'},
+                {sku: '1001-001-100'},
+                {sku: '1001-001-100'},
+                {sku: '1001-002-102'},
+                {sku: '1001-001-100'},
+                {sku: '1001-002-102'},
+                {sku: '1001-001-100'},
+                {sku: '1001-002-102'},
+                {sku: '1001-001-100'},
+                {sku: '1001-002-102'},
+              ]}
+              extraData={this.state.scanned}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({item}) => (
+                <View style={{backgroundColor: 'rgb(235,232,215)'}}>
+                  <View
+                    style={{
+                      height: 50,
+                      width: '95%',
+                      alignSelf: 'flex-end',
+                      borderBottomColor: 'grey',
+                      borderBottomWidth: StyleSheet.hairlineWidth,
+                      paddingLeft: 10,
+                      justifyContent: 'center',
+                      backgroundColor: 'rgb(235,232,215)',
+                    }}>
+                    <Text style={{color: 'black'}}>{item.sku}</Text>
+                  </View>
                 </View>
-              </View>
-            )}
-          />
-          <ScrollView>
-            <ListItem
-              checkBox={{checked: false}}
-              // Description
-              title={'Description'}
-              // Sku
-              subtitle={'1001-001-100'}
-              // Amount in stock
-              badge={{value: '12'}}
-              bottomDivider
+              )}
             />
-            <ListItem
-              title={'Description2'}
-              subtitle={'1001-001-101'}
-              badge={{value: '1'}}
-              bottomDivider
-            />
-          </ScrollView>
+          </View>
         </View>
       </View>
     );
