@@ -12,19 +12,16 @@ import {
   Alert,
   View,
   FlatList,
-  ScrollView,
 } from 'react-native';
 
-import {ListItem} from 'react-native-elements';
-
-import QRCodeScanner from 'react-native-qrcode-scanner';
+import {RNCamera} from 'react-native-camera';
 
 export default class Home extends Component {
   constructor() {
     super();
     this.state = {
       paused: false,
-      scanned: null,
+      barcodes: [],
     };
   }
 
@@ -43,116 +40,110 @@ export default class Home extends Component {
       : this.camera.resumePreview();
   }
 
-  onSuccess(e) {
-    this.setState({scanned: {sku: e.data}});
-    console.log(this.state.scanned);
+  onSuccess(barcode) {
+    this.setState({barcodes: [...barcodes, ...barcode.data]});
+    alert(this.state.barcodes);
   }
 
   render() {
     return (
       <View>
         <TouchableOpacity
-          style={{flex: 1}}
+          style= { styles.cameraBox }
           onPress={() => {
             this.pauseCameraToggle();
           }}
           activeOpacity={0.8}>
-          <QRCodeScanner
-            cameraProps={{
-              captureAudio: false,
-              ref: node => {
-                this.camera = node;
-              },
-              onCameraReady: () => {
+          <View
+            style= { styles.cameraBox }>
+            <RNCamera
+              ref={ref => {
+                this.camera = ref;
+              }}
+              onCameraReady={() => {
                 this.setState({paused: true});
-              },
-            }}
-            ref={node => {
-              this.scanner = node;
-            }}
-            onRead={this.onSuccess.bind(this)}
-            cameraStyle={{flex: 1}}
-            fadeIn={false}
-            topViewStyle={{display: 'none'}}
-            bottomViewStyle={{display: 'none'}}
-            containerStyle={{
-              flex: 1,
-              justifyContent: 'flex-start',
-              alignItems: 'flex-start',
-            }}
-          />
+              }}
+              captureAudio={false}
+              style={ styles.cameraBox }
+              onBarCodeRead={this.onSuccess}
+            />
+          </View>
         </TouchableOpacity>
         <View
-          style={{
-            flex: 2,
-            justifyContent: 'flex-start',
-            backgroundColor: 'rgb(172,122,66)',
-          }}>
+          style={ styles.listContainer }>
           <View
-            style={{
-              borderBottomWidth: StyleSheet.hairlineWidth,
-              backgroundColor: 'rgb(233,207,178)',
-            }}>
+            style={ styles.listHeaderBox }>
             <Text
-              style={{
-                alignSelf: 'center',
-                fontSize: 36,
-                borderBottomWidth: 1,
-                padding: 10,
-                color: 'black',
+              style={ styles.listHeaderText }>
               }}>
               Aisle 09
             </Text>
           </View>
-          <View style={{flex: 1, width: '100%'}}>
+          <View style={ styles.listContainer }>
             <FlatList
-              contentContainerStyle={{
-                backgroundColor: 'rgb(172,122,66)',
-              }}
-              data={[
-                {sku: '1001-001-100'},
-                {sku: '1001-001-100'},
-                {sku: '1001-002-102'},
-                {sku: '1001-001-100'},
-                {sku: '1001-001-100'},
-                {sku: '1001-001-100'},
-                {sku: '1001-001-100'},
-                {sku: '1001-001-100'},
-                {sku: '1001-002-102'},
-                {sku: '1001-001-100'},
-                {sku: '1001-002-102'},
-                {sku: '1001-001-100'},
-                {sku: '1001-002-102'},
-                {sku: '1001-001-100'},
-                {sku: '1001-002-102'},
-              ]}
-              extraData={this.state.scanned}
+              contentContainerStyle={ styles.listBackground }
+              data={this.state.barcodes}
+              extraData={this.state}
               keyExtractor={(item, index) => index.toString()}
               renderItem={({item}) => (
-                <View style={{backgroundColor: 'rgb(235,232,215)'}}>
+                <View style={ styles.listItemBackground }>
                   <View
-                    style={{
-                      height: 50,
-                      width: '95%',
-                      alignSelf: 'flex-end',
-                      borderBottomColor: 'grey',
-                      borderBottomWidth: StyleSheet.hairlineWidth,
-                      paddingLeft: 10,
-                      justifyContent: 'center',
-                      backgroundColor: 'rgb(235,232,215)',
-                    }}>
-                    <Text style={{color: 'black'}}>{item.sku}</Text>
+                    style={ styles.listItem }>
+                    <Text style={ styles.listItemText }>{item}</Text>
                   </View>
                 </View>
               )}
             />
-          </View>
         </View>
       </View>
     );
   }
-}
+}}
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  cameraBox: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  listContainer: {
+    flex: 1, width: '100%'
+  },
+  listBackground: {
+    backgroundColor: 'rgb(172,122,66)',
+  },
+  listHeaderContainer: {
+    flex: 2,
+    justifyContent: 'flex-start',
+    backgroundColor: 'rgb(172,122,66)',
+  },
+  listHeaderBox: {
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    backgroundColor: 'rgb(233,207,178)',
+  },
+  listHeaderText: {
+    alignSelf: 'center',
+    fontSize: 36,
+    borderBottomWidth: 1,
+    padding: 10,
+    color: 'black',
+  },
+  listItem: {
+    height: 50,
+    width: '95%',
+    alignSelf: 'flex-end',
+    borderBottomColor: 'grey',
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    paddingLeft: 10,
+    justifyContent: 'center',
+    backgroundColor: 'rgb(235,232,215)',
+  },
+  listItemBackground: {
+    backgroundColor: 'rgb(235,232,215)',
+  }
+  listItemText: {
+    color: 'black'
+  },
+});
 
 AppRegistry.registerComponent('Home', () => Home);
