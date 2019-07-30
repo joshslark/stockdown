@@ -73,6 +73,8 @@ export default class Home extends Component {
         barcodes: [...this.state.barcodes, sku], 
         lastRead: readData.data,
       });
+
+      this.flatlist.scrollToEnd({animated:true});
     };
   
 
@@ -107,6 +109,9 @@ export default class Home extends Component {
         </View>
         <View style={ styles.listContainer }>
           <FlatList
+            ref = {ref => {
+              this.flatlist = ref;
+            }}
             contentContainerStyle={ styles.listBackground }
             data={this.state.barcodes}
             extraData={this.state}
