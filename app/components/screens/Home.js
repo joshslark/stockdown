@@ -15,6 +15,7 @@ import {
 } from 'react-native';
 
 import {RNCamera} from 'react-native-camera';
+import styles from './styles';
 
 export default class Home extends Component {
   constructor() {
@@ -22,12 +23,15 @@ export default class Home extends Component {
     this.state = {
       paused: false,
       barcodes: [],
+      canDetectBarcode: true,
+      lastRead: "",
     };
   }
 
   pauseCameraToggle() {
     this.setState({
       paused: !this.state.paused,
+      canDetectBarcode: true,
     });
   }
 
@@ -40,110 +44,86 @@ export default class Home extends Component {
       : this.camera.resumePreview();
   }
 
-  onSuccess(barcode) {
-    this.setState({barcodes: [...barcodes, ...barcode.data]});
-    alert(this.state.barcodes);
-  }
+  onSuccess = (readData) => 
+    {
+      if (readData.data === this.state.lastRead) {
+        return;
+      }
+      var sku = readData.data;
+
+      var skuEnd = sku.slice(-3);
+      var skuBegin = "";
+      // Remove leading prefix
+      sku = sku.substring(4);
+      // Example 1001-100-100
+      if (sku.length === 10) {
+        skuBegin = sku.slice(0,4);
+        sku = skuBegin + "-" 
+          + sku.slice(4,7) + "-" 
+          + skuEnd;
+      }
+      // Example 999-901
+      if (sku.length === 6) {
+        skuBegin = sku.slice(0,3);
+        sku = skuBegin + "-"
+          + skuEnd;
+      }
+
+      this.setState({
+        barcodes: [...this.state.barcodes, sku], 
+        lastRead: readData.data,
+      });
+    };
+  
 
   render() {
+   const {canDetectBarcode} = this.state; 
     return (
-      <View>
+      <View style= {{flex:1, width:'100%'}}>
         <TouchableOpacity
-          style= { styles.cameraBox }
+          style= {styles.cameraTouchBox }
           onPress={() => {
             this.pauseCameraToggle();
           }}
           activeOpacity={0.8}>
-          <View
-            style= { styles.cameraBox }>
-            <RNCamera
-              ref={ref => {
-                this.camera = ref;
-              }}
-              onCameraReady={() => {
-                this.setState({paused: true});
-              }}
-              captureAudio={false}
-              style={ styles.cameraBox }
-              onBarCodeRead={this.onSuccess}
-            />
-          </View>
+          <RNCamera
+            ref={ref => {
+              this.camera = ref;
+            }}
+            onCameraReady={() => {
+              this.setState({paused: true});
+            }}
+            captureAudio={false}
+            style={styles.cameraBox}
+            onBarCodeRead={canDetectBarcode ? this.onSuccess: null}
+          />
         </TouchableOpacity>
         <View
-          style={ styles.listContainer }>
-          <View
-            style={ styles.listHeaderBox }>
-            <Text
-              style={ styles.listHeaderText }>
-              }}>
-              Aisle 09
-            </Text>
-          </View>
-          <View style={ styles.listContainer }>
-            <FlatList
-              contentContainerStyle={ styles.listBackground }
-              data={this.state.barcodes}
-              extraData={this.state}
-              keyExtractor={(item, index) => index.toString()}
-              renderItem={({item}) => (
-                <View style={ styles.listItemBackground }>
-                  <View
-                    style={ styles.listItem }>
-                    <Text style={ styles.listItemText }>{item}</Text>
-                  </View>
+          style={ styles.listHeaderBox }>
+          <Text
+            style={ styles.listHeaderText }>
+            Aisle 09
+          </Text>
+        </View>
+        <View style={ styles.listContainer }>
+          <FlatList
+            contentContainerStyle={ styles.listBackground }
+            data={this.state.barcodes}
+            extraData={this.state}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={({item}) => (
+              <View style={ styles.listItemBackground }>
+                <View
+                  style={ styles.listItem }>
+                  <Text style={ styles.listItemText }>{item}</Text>
                 </View>
-              )}
-            />
+              </View>
+            )}
+          />
         </View>
       </View>
     );
   }
-}}
-
-const styles = StyleSheet.create({
-  cameraBox: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-  },
-  listContainer: {
-    flex: 1, width: '100%'
-  },
-  listBackground: {
-    backgroundColor: 'rgb(172,122,66)',
-  },
-  listHeaderContainer: {
-    flex: 2,
-    justifyContent: 'flex-start',
-    backgroundColor: 'rgb(172,122,66)',
-  },
-  listHeaderBox: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    backgroundColor: 'rgb(233,207,178)',
-  },
-  listHeaderText: {
-    alignSelf: 'center',
-    fontSize: 36,
-    borderBottomWidth: 1,
-    padding: 10,
-    color: 'black',
-  },
-  listItem: {
-    height: 50,
-    width: '95%',
-    alignSelf: 'flex-end',
-    borderBottomColor: 'grey',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingLeft: 10,
-    justifyContent: 'center',
-    backgroundColor: 'rgb(235,232,215)',
-  },
-  listItemBackground: {
-    backgroundColor: 'rgb(235,232,215)',
-  }
-  listItemText: {
-    color: 'black'
-  },
-});
+}
 
 AppRegistry.registerComponent('Home', () => Home);
