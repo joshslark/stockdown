@@ -14,7 +14,8 @@ import {
   FlatList,
 } from 'react-native';
 
-import {RNCamera} from 'react-native-camera';
+import {Camera} from 'expo-camera';
+import * as Permissions from 'expo-permissions';
 import styles from './styles';
 
 export default class Home extends Component {
@@ -25,7 +26,13 @@ export default class Home extends Component {
       barcodes: [],
       canDetectBarcode: true,
       lastRead: "",
+      hasCameraPermission: null,
     };
+  }
+
+  async componentDidMount() {
+    const {status} = await Permissions.askAsync(Permissions.CAMERA);
+    this.setState({ hasCameraPermission: status === 'granted' });
   }
 
   pauseCameraToggle() {
@@ -79,55 +86,61 @@ export default class Home extends Component {
   
 
   render() {
-   const {canDetectBarcode} = this.state; 
-    return (
-      <View style= {{flex:1, width:'100%'}}>
-        <TouchableOpacity
-          style= {styles.cameraTouchBox }
-          onPress={() => {
-            this.pauseCameraToggle();
-          }}
-          activeOpacity={0.8}>
-          <RNCamera
-            ref={ref => {
-              this.camera = ref;
+   const {canDetectBarcode, hasCameraPermission} = this.state; 
+    if (hasCameraPermission === null) {
+      return <View />;
+    } else if (hasCameraPermission === false) {
+      return <Text> No access to camera </Text>
+    } else {
+      return (
+        <View style= {{flex:1, width:'100%'}}>
+          <TouchableOpacity
+            style= {styles.cameraTouchBox }
+            onPress={() => {
+              this.pauseCameraToggle();
             }}
-            onCameraReady={() => {
-              this.setState({paused: true});
-            }}
-            captureAudio={false}
-            style={styles.cameraBox}
-            onBarCodeRead={canDetectBarcode ? this.onSuccess: null}
-          />
-        </TouchableOpacity>
-        <View
-          style={ styles.listHeaderBox }>
-          <Text
-            style={ styles.listHeaderText }>
-            Aisle 09
-          </Text>
-        </View>
-        <View style={ styles.listContainer }>
-          <FlatList
-            ref = {ref => {
-              this.flatlist = ref;
-            }}
-            contentContainerStyle={ styles.listBackground }
-            data={this.state.barcodes}
-            extraData={this.state}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item}) => (
-              <View style={ styles.listItemBackground }>
-                <View
-                  style={ styles.listItem }>
-                  <Text style={ styles.listItemText }>{item}</Text>
+            activeOpacity={0.8}>
+            <Camera
+              ref={ref => {
+                this.camera = ref;
+              }}
+              onCameraReady={() => {
+                this.setState({paused: true});
+              }}
+              captureAudio={false}
+              style={styles.cameraBox}
+              onBarCodeScanned={canDetectBarcode ? this.onSuccess: null}
+            />
+          </TouchableOpacity>
+          <View
+            style={ styles.listHeaderBox }>
+            <Text
+              style={ styles.listHeaderText }>
+              Aisle 09
+            </Text>
+          </View>
+          <View style={ styles.listContainer }>
+            <FlatList
+              ref = {ref => {
+                this.flatlist = ref;
+              }}
+              contentContainerStyle={ styles.listBackground }
+              data={this.state.barcodes}
+              extraData={this.state}
+              keyExtractor={(item, index) => index.toString()}
+              renderItem={({item}) => (
+                <View style={ styles.listItemBackground }>
+                  <View
+                    style={ styles.listItem }>
+                    <Text style={ styles.listItemText }>{item}</Text>
+                  </View>
                 </View>
-              </View>
-            )}
-          />
+              )}
+            />
+          </View>
         </View>
-      </View>
-    );
+      );
+    }
   }
 }
 
