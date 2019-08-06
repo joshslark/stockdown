@@ -17,6 +17,7 @@ import {
 
 import {RNCamera} from 'react-native-camera';
 import styles from './styles';
+import barcodes from './barcodes';
 
 export default class Home extends Component {
   constructor() {
