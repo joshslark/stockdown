@@ -12,6 +12,7 @@ import {
   Alert,
   View,
   FlatList,
+  Button,
 } from 'react-native';
 
 import {RNCamera} from 'react-native-camera';
@@ -21,10 +22,9 @@ export default class Home extends Component {
   constructor() {
     super();
     this.state = {
-      paused: false,
-      barcodes: [],
+      paused: true,
+      lastRead: 0,
       canDetectBarcode: true,
-      lastRead: "",
     };
   }
 
@@ -33,50 +33,38 @@ export default class Home extends Component {
       paused: !this.state.paused,
       canDetectBarcode: true,
     });
-  }
-
-  componentDidUpdate() {
     console.log(
-      this.state.paused ? 'The camera is paused' : 'The camera is active',
+      this.state.paused ? 'The camera is paused' : 'The camera is active'
     );
     this.state.paused
       ? this.camera.pausePreview()
       : this.camera.resumePreview();
   }
-
-  onSuccess = (readData) => 
-    {
-      if (readData.data === this.state.lastRead) {
-        return;
-      }
-      var sku = readData.data;
-
-      var skuEnd = sku.slice(-3);
-      var skuBegin = "";
-      // Remove leading prefix
-      sku = sku.substring(4);
-      // Example 1001-100-100
-      if (sku.length === 10) {
-        skuBegin = sku.slice(0,4);
-        sku = skuBegin + "-" 
-          + sku.slice(4,7) + "-" 
-          + skuEnd;
-      }
-      // Example 999-901
-      if (sku.length === 6) {
-        skuBegin = sku.slice(0,3);
-        sku = skuBegin + "-"
-          + skuEnd;
-      }
-
-      this.setState({
-        barcodes: [...this.state.barcodes, sku], 
-        lastRead: readData.data,
-      });
-
-      this.flatlist.scrollToEnd({animated:true});
-    };
   
+  onSuccess = readData => {
+    if (readData.data === this.state.lastRead) {
+      return;
+    }
+    this.setState({lastRead: readData.data});
+    var sku = readData.data;
+
+    var skuEnd = sku.slice(-3);
+    var skuBegin = '';
+    // Remove leading prefix
+    sku = sku.substring(4);
+    // Example 1001-100-100
+    if (sku.length === 10) {
+      skuBegin = sku.slice(0, 4);
+      sku = skuBegin + '-' + sku.slice(4, 7) + '-' + skuEnd;
+    }
+    // Example 999-901
+    if (sku.length === 6) {
+      skuBegin = sku.slice(0, 3);
+      sku = skuBegin + '-' + skuEnd;
+    }
+    console.log("Adding sku: " + sku);
+    this.add(sku);
+  };
 
   render() {
    const {canDetectBarcode} = this.state; 
@@ -108,22 +96,9 @@ export default class Home extends Component {
           </Text>
         </View>
         <View style={ styles.listContainer }>
-          <FlatList
-            ref = {ref => {
-              this.flatlist = ref;
-            }}
-            contentContainerStyle={ styles.listBackground }
-            data={this.state.barcodes}
-            extraData={this.state}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({item}) => (
-              <View style={ styles.listItemBackground }>
-                <View
-                  style={ styles.listItem }>
-                  <Text style={ styles.listItemText }>{item}</Text>
-                </View>
-              </View>
-            )}
+          <Barcodes
+            ref={ref => {
+              this.barcodesList = ref}}
           />
         </View>
       </View>

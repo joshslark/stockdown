@@ -1,4 +1,3 @@
-
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
@@ -10,15 +9,12 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     flex: 2, 
-    width: '100%'
-  },
-  listBackground: {
+    width: '100%',
     backgroundColor: 'rgb(172,122,66)',
   },
   listHeaderContainer: {
     flex: 2,
     justifyContent: 'flex-start',
-    backgroundColor: 'rgb(172,122,66)',
   },
   listHeaderBox: {
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -41,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'rgb(235,232,215)',
   },
-  listItemBackground: {
+  listItemLeftMargin: {
     backgroundColor: 'rgb(235,232,215)',
   },
   listItemText: {
