@@ -90,7 +90,7 @@ export default class Barcodes extends React.Component {
     } 
     else {
       return (
-        <View>
+        <View style={ styles.listContainer }>
           <View
             style={{backgroundColor:"white"}}>
             <Button
