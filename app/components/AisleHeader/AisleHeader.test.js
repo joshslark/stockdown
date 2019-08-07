@@ -1,6 +1,9 @@
-describe("AisleHeader component", () => {
-  const getComponent = () => shallow(<AisleHeader number="0"/>);
+import React from 'react';
+import AisleHeader from './AisleHeader';
 
-  it("should render", () => {
-    const component = getComponent();
-    expect(component)
+import renderer from 'react-test-renderer';
+
+test('renders correctly', () => {
+  const tree = renderer.create(<AisleHeader number="00" />).toJSON();
+  expect(tree).toMatchSnapshot();
+});

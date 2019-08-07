@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "rgb(233,207,178)",
+      "borderBottomWidth": 0.5,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "borderBottomWidth": 1,
+        "color": "black",
+        "fontSize": 36,
+        "padding": 10,
+      }
+    }
+  >
+    Aisle 
+    00
+  </Text>
+</View>
+`;
