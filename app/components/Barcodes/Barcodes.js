@@ -1,13 +1,14 @@
+import React, {Component} from 'react';
 import SQLite from 'react-native-sqlite-storage';
 
 const db = SQLite.openDatabase("storage.db");
 
-export default class Barcodes extends React.Component {
+export default class Barcodes extends Component {
   state = {
     barcodes: null,
   };
 
-  add(data) {
+  add = (data) => {
     if ((data === null) | (data === '')) {
       return false;
     }
@@ -22,7 +23,7 @@ export default class Barcodes extends React.Component {
       this.handleError,
       this.update
     );
-  }
+  };
 
   update = () => {
     console.log ("Updating from database");
@@ -32,15 +33,13 @@ export default class Barcodes extends React.Component {
   handleError = (e) => {
     console.log (e);
   };
+
   componentDidMount() {
     db.transaction(tx => {
       tx.executeSql(
         `create table if not exists barcodes (id integer primary key not null, data text);`
       );
     });
-  }
-
-  componentDidUpdate() {
   }
 
   _renderBarcode = ({item}) => (
