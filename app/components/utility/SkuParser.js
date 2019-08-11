@@ -1,49 +1,52 @@
-// Todo: Pull this out to config
-const hdSkuPrefix = "9807"
+  // Todo: Pull this out to config
+  const hdSkuPrefix = "9807";
 
-recognizeSku (barcodeData) {
-	// Example
-	// 98071001100100
-	var sku = [];
-	sku = _recognizePrefix(barcodeData);
-	if (!sku) {
-		return false;
-	}
+  export const recognizeSku = (barcodeData) => {
+          // Example
+          // 98071001100100
+          var sku = [];
+          sku = _recognizePrefix(barcodeData);
+          if (!sku) {
+                  return false;
+          }
 
-	// Example: 1001-100-100
-	if (sku["Full"].length === 10) {
+          // Example: 1001-100-100
+          if (sku["Full"].length === 10) {
 
-		sku["First"] = sku["Full"].slice(0,4);
-		sku["Middle"] = sku["Full"].slice(4,7);
-		sku["Last"] = sku["Full"].slice(-3);
+                  sku["First"] = sku["Full"].slice(0,4);
+                  sku["Middle"] = sku["Full"].slice(4,7);
+                  sku["Last"] = sku["Full"].slice(-3);
 
-		return sku["First"] + '-'
-			+ sku["Middle"] + '-'
-			+ sku["Last"];
+                  return sku["First"] + '-'
+                          + sku["Middle"] + '-'
+                          + sku["Last"];
 
-	// Example: 999-901
-	} else if (sku["Full"].length === 6) {
+          // Example: 999-901
+          } else if (sku["Full"].length === 6) {
 
-		sku["First"] = sku["Full"].slice(0,3);
-		sku["Last"] = sku["Full"].slice(-3);
+                  sku["First"] = sku["Full"].slice(0,3);
+                  sku["Last"] = sku["Full"].slice(-3);
 
-		return sku["First"] + '-'
-			+ sku ["Last"];
-	} else {
-		return false;
-	}
-}
+                  return sku["First"] + '-'
+                          + sku ["Last"];
+          } else {
+                  return false;
+          }
+  };
 
-_recognizePrefix (sku) {
-	sku["Prefix"] = barcodeData.substring(0,3);
-	// Entire Sku
-	sku["Full"] = barcodeData.substring(4);
+  _recognizePrefix = (barcodeData) => {
+    var sku = [];
+    if(!barcodeData) {
+      return false;
+    }
 
-	if (sku["Prefix"] === hdSkuPrefix) {
-		return sku; 
-	}
+    sku["Prefix"] = barcodeData.substring(0,4);
+    // Entire Sku
+    sku["Full"] = barcodeData.substring(4);
 
-	return false;
-}
-	
-
+    if (sku["Prefix"] === hdSkuPrefix) {
+            return sku; 
+    }
+    console.log(`SkuPrefix was ${sku["Prefix"]}`);
+    return false;
+  };

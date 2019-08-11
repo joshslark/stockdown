@@ -28,8 +28,13 @@ target 'StockDown' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
   # Pods for StockDown
-  pod 'react-native-camera', path: '../node_modules/react-native-camera'
+  pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
+    'TextDetector',
+    'BarcodeDetectorMLKit'
+    ]
+  pod 'Firebase/Core'
   pod 'react-native-sqlite-storage', path: '../node_modules/react-native-sqlite-storage'
+
 
   post_install do |installer|
     installer.pods_project.targets.each do |target|

@@ -7,23 +7,28 @@ import React, {Component} from 'react';
 import {
   AppRegistry,
   View,
+  Alert,
 } from 'react-native';
 
 import {Camera, AisleHeader, Barcodes} from './components';
 
 export default class Home extends Component {
+  state = {
+    barcode: ""
+  };
+
   render() {
+    const barcode = this.state.barcode;
     return (
       <View style= {{flex:1, width:'100%'}}>
 	<Camera
-	  saveBarcode={this.barcodesList.add}
+	  saveBarcode={(data)=>this.setState({barcode: data})}
 	/>
 	<AisleHeader
-	  number = "09"
+	  number="09"
 	/>
-	<Barcodes
-	  ref={this.storeRef}
-	/>
+        <Barcodes 
+          addBarcode={barcode}/>
       </View>
     );
   }

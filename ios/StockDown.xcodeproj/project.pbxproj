@@ -33,6 +33,7 @@
 		90E0A75022E2657100FD1997 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74022E2657100FD1997 /* EvilIcons.ttf */; };
 		90E0A75122E2657100FD1997 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74122E2657100FD1997 /* SimpleLineIcons.ttf */; };
 		90E0A75222E2657100FD1997 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74222E2657100FD1997 /* MaterialIcons.ttf */; };
+		90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		FE0D864AC5ABDCD3B4221C6F /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
@@ -86,6 +87,7 @@
 		90E0A74022E2657100FD1997 /* EvilIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EvilIcons.ttf; sourceTree = "<group>"; };
 		90E0A74122E2657100FD1997 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		90E0A74222E2657100FD1997 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
+		90E1C0F923027DCC0058457E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "StockDown/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D74B3C4D0A4CF2923973A655 /* Pods-StockDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown.debug.xcconfig"; path = "Target Support Files/Pods-StockDown/Pods-StockDown.debug.xcconfig"; sourceTree = "<group>"; };
 		DEE361ED28E3879F920BA5C8 /* Pods-StockDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown.release.xcconfig"; path = "Target Support Files/Pods-StockDown/Pods-StockDown.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -148,6 +150,7 @@
 		13B07FAE1A68108700A75B9A /* StockDown */ = {
 			isa = PBXGroup;
 			children = (
+				90E1C0F923027DCC0058457E /* GoogleService-Info.plist */,
 				90E0A73222E2657100FD1997 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -265,6 +268,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				61B8A45D81D5753DC381C477 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -383,6 +387,7 @@
 				90E0A74F22E2657100FD1997 /* Zocial.ttf in Resources */,
 				90E0A75122E2657100FD1997 /* SimpleLineIcons.ttf in Resources */,
 				90E0A74522E2657100FD1997 /* Feather.ttf in Resources */,
+				90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */,
 				90E0A74422E2657100FD1997 /* Octicons.ttf in Resources */,
 				90E0A74722E2657100FD1997 /* FontAwesome5_Brands.ttf in Resources */,
 				90E0A74922E2657100FD1997 /* AntDesign.ttf in Resources */,
@@ -438,6 +443,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		61B8A45D81D5753DC381C477 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		B42E8B8E9F736D7CE41A2D9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -587,7 +610,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDown;
 				PRODUCT_NAME = StockDown;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -608,7 +631,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDown;
 				PRODUCT_NAME = StockDown;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

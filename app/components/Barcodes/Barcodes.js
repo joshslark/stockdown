@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import SQLite from 'react-native-sqlite-storage';
+import {View, Button, FlatList, Text} from 'react-native';
+import styles from './styles';
 
 const db = SQLite.openDatabase("storage.db");
 
 export default class Barcodes extends Component {
   state = {
     barcodes: null,
+    prevAddedBarcode: "",
   };
 
   add = (data) => {
@@ -25,6 +28,7 @@ export default class Barcodes extends Component {
     );
   };
 
+  //Todo fix
   update = () => {
     console.log ("Updating from database");
     this.barcodesList && this.barcodesList.update();
@@ -40,6 +44,13 @@ export default class Barcodes extends Component {
         `create table if not exists barcodes (id integer primary key not null, data text);`
       );
     });
+  }
+
+  componentDidUpdate() {
+    if (this.props.addBarcode != this.state.prevAddedBarcode) {
+      this.add(this.props.addBarcode);
+      this.setState({prevAddedBarcode: this.props.addBarcode});
+    }
   }
 
   _renderBarcode = ({item}) => (
@@ -84,32 +95,27 @@ export default class Barcodes extends Component {
 
   render() {
     const { barcodes } = this.state;
-    if (barcodes === null) {
-      return null;
-    } 
-    else {
-      return (
-        <View style={ styles.listContainer }>
-          <View
-            style={{backgroundColor:"white"}}>
-            <Button
-              onPress={this.clearDB.bind(this)}
-              title={"Clear List"}
-            />
-          </View>
-          <View>
-            <FlatList
-              ref={ref => {
-                this.flatlist = ref;
-              }}
-              data={this.state.barcodes}
-              extraData={this.state}
-              keyExtractor={(item, index) => index.toString()}
-              renderItem={this._renderBarcode}
-            />
-          </View>
+    return (
+      <View style={ styles.listContainer }>
+        <View
+          style={{backgroundColor:"white"}}>
+          <Button
+            onPress={this.clearDB.bind(this)}
+            title={"Clear List"}
+          />
         </View>
-      );
-    }
+        <View>
+          <FlatList
+            ref={ref => {
+              this.flatlist = ref;
+            }}
+            data={this.state.barcodes}
+            extraData={this.state}
+            keyExtractor={(item, index) => index.toString()}
+            renderItem={this._renderBarcode}
+          />
+        </View>
+      </View>
+    );
   }
 }
