@@ -32,7 +32,6 @@ export default class Home extends Component {
       </View>
     );
   }
-  storeRef = (ref) => {this.barcodesList = ref};
 }
 
 AppRegistry.registerComponent('Home', () => Home);

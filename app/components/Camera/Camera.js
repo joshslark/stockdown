@@ -5,6 +5,7 @@ import {recognizeSku} from '../utility/SkuParser'
 import styles from './styles';
 
 export default class Camera extends Component {
+
   // prevBarcode used to prevent repeat barcodes
   state = {
     paused: true,
@@ -15,6 +16,12 @@ export default class Camera extends Component {
     textBlocks: [],
     selectedText: "",
   };
+
+  constructor(props) {
+    super(props);
+    this.camera = React.createRef();
+  }
+
 
   // saveBarcode prop is callback to save the barcode
   // that was scanned
@@ -85,7 +92,9 @@ export default class Camera extends Component {
           sku ? this.add(sku) : this.add(data);
         }}
         activeOpacity={0.8}
-      />
+      >
+        <Text style={{color:"white", fontSize: 12}}> {JSON.stringify({bounds,data,type})}( </Text>
+      </TouchableOpacity>
     </React.Fragment>
   );
 
@@ -116,7 +125,7 @@ export default class Camera extends Component {
     return (
       <View style= {styles.cameraTouchBox} >
         <RNCamera
-          ref={this.storeRef}
+          ref={this.camera}
           captureAudio={false}
           style={styles.cameraBox}
 	  onTextRecognized={canDetectText ? this.textRecognized : null}
@@ -166,7 +175,6 @@ export default class Camera extends Component {
     sku ? this.add(sku): this.add(barcode.data);
   };
 
-  storeRef = (ref) => {this.camera = ref};
-  pauseCamera = () => {this.camera.pausePreview()};
-  resumeCamera = () => {this.camera.resumePreview()};
+  pauseCamera = () => {this.camera.current.pausePreview()};
+  resumeCamera = () => {this.camera.current.resumePreview()};
 }

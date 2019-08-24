@@ -3831,7 +3831,7 @@ jest-changed-files@^24.9.0:
     execa "^1.0.0"
     throat "^4.0.0"
 
-jest-cli@^24.9.0:
+jest-cli@^24.5.0, jest-cli@^24.9.0:
   version "24.9.0"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-24.9.0.tgz#ad2de62d07472d419c6abc301fc432b98b10d2af"
   integrity sha512-+VLRKyitT3BWoMeSUIHRxV/2g8y9gw91Jh5z2UmXZzkZKpbC08CSehVxgHUwTpy+HwGcns/tqafQDJW7imYvGg==
@@ -6091,7 +6091,7 @@ react-native-geolocation@^1.0.0:
   resolved "https://registry.yarnpkg.com/react-native-geolocation/-/react-native-geolocation-1.0.0.tgz#e7dce7c31f378e9d721a89ece5bbb093320e7c77"
   integrity sha1-59znwx83jp1yGons5buwkzIOfHc=
 
-react-native-mock-render@^0.1.2:
+react-native-mock-render@^0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/react-native-mock-render/-/react-native-mock-render-0.1.5.tgz#c6c502a0a5f45755b8c4bc19af2e44be794a6eb6"
   integrity sha512-LzNZo25Ul2S+43nJuIDizn1Aycr/KrGjLeJMV9BwjKDHlo2vrqega5VXoXIFoHg6Qpm85EabsIuHWaoW8Nh55g==
