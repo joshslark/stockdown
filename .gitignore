@@ -58,3 +58,7 @@ buck-out/
 
 #Vim Swap
 *.swp
+
+#firebase
+google-services.json
+GoogleService-Info.plist

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1010"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "NO"
+      parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
@@ -14,37 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "83CBBA2D1A601D0E00E9B192"
-               BuildableName = "libReact.a"
-               BlueprintName = "React"
-               ReferencedContainer = "container:../node_modules/react-native/React/React.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "StockDown.app"
-               BlueprintName = "StockDown"
-               ReferencedContainer = "container:StockDown.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "NO"
-            buildForRunning = "NO"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "StockDownTests.xctest"
-               BlueprintName = "StockDownTests"
+               BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
+               BuildableName = "StockDown Debug.app"
+               BlueprintName = "StockDown Debug"
                ReferencedContainer = "container:StockDown.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -60,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StockDown.app"
-            BlueprintName = "StockDown"
+            BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
+            BuildableName = "StockDown Debug.app"
+            BlueprintName = "StockDown Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -70,7 +42,7 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -83,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StockDown.app"
-            BlueprintName = "StockDown"
+            BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
+            BuildableName = "StockDown Debug.app"
+            BlueprintName = "StockDown Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -102,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "StockDown.app"
-            BlueprintName = "StockDown"
+            BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
+            BuildableName = "StockDown Debug.app"
+            BlueprintName = "StockDown Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
