@@ -93,7 +93,6 @@ export default class Camera extends Component {
         }}
         activeOpacity={0.8}
       >
-        <Text style={{color:"white", fontSize: 12}}> {JSON.stringify({bounds,data,type})}( </Text>
       </TouchableOpacity>
     </React.Fragment>
   );
