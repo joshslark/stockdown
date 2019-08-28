@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
+    "babel-preset-react-native": "^4.0.1",
     "expo-sqlite": "^6.0.0",
     "gradle": "^1.0.9",
     "help": "^3.0.2",

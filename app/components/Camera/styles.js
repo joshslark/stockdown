@@ -4,9 +4,6 @@ const styles = StyleSheet.create({
   cameraBox: {
     flex: 1,
   },
-  cameraTouchBox: {
-    flex: 1,
-  },
   listContainer: {
     flex: 2, 
     width: '100%',

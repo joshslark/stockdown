@@ -10,7 +10,7 @@ export default class Camera extends Component {
   state = {
     paused: true,
     canDetectBarcode: true,
-    canDetectText: true,
+    canDetectText: false,
     prevBarcode: 0,
     barcodes: [],
     textBlocks: [],
@@ -122,21 +122,19 @@ export default class Camera extends Component {
   render () {
     const {canDetectBarcode, canDetectText} = this.state; 
     return (
-      <View style= {styles.cameraTouchBox} >
-        <RNCamera
-          ref={this.camera}
-          captureAudio={false}
-          style={styles.cameraBox}
-	  onTextRecognized={canDetectText ? this.textRecognized : null}
-          onGoogleVisionBarcodesDetected={
-            canDetectBarcode ? this.barcodeRecognized: null}
-          googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All}
-        >
-        {!!canDetectBarcode && this.renderBarcodes()}
-	{!!canDetectText && this.renderTextblocks()}
-	{(this.state.selectedText.length > 0) && this.renderSelectedText()}
-        </RNCamera>
-      </View>
+      <RNCamera
+	ref={this.camera}
+	captureAudio={false}
+	style={styles.cameraBox}
+	onTextRecognized={canDetectText ? this.textRecognized : null}
+	onGoogleVisionBarcodesDetected={
+	  canDetectBarcode ? this.barcodeRecognized: null}
+	googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All}
+      >
+      {!!canDetectBarcode && this.renderBarcodes()}
+      {!!canDetectText && this.renderTextblocks()}
+      {(this.state.selectedText.length > 0) && this.renderSelectedText()}
+      </RNCamera>
     );
   }
 
