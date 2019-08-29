@@ -1,6 +1,6 @@
 {
   "name": "StockDown",
-  "version": "0.0.3-0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
@@ -14,11 +14,11 @@
     "help": "^3.0.2",
     "ios-deploy": "^1.9.4",
     "metro": "^0.56.0",
-    "react": "16.9.0",
+    "react": "16.8.6",
     "react-addons-test-utils": "^15.6.2",
     "react-devtools-core": "msand/react-devtools-core#4c30959",
     "react-dom": "^16.9.0",
-    "react-native": "^0.60.4",
+    "react-native": "0.60.5",
     "react-native-camera": "^3.3.0",
     "react-native-elements": "^1.1.0",
     "react-native-geolocation": "^1.0.0",
