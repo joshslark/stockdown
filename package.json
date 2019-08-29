@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --collectCoverage"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
@@ -54,7 +55,7 @@
     "preset": "react-native",
     "testEnvironment": "jsdom",
     "setupFiles": [
-      "./setupTests.js"
+      "./jest/setup.js"
     ]
   }
 }

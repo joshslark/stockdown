@@ -30,3 +30,12 @@ function suppressDomErrors() {
 suppressDomErrors()
 
 configure({adapter: new Adapter()});
+
+jest
+  .mock('react-native-sqlite-storage', () => ({
+    openDatabase: jest.fn((filename) => {
+      return {
+	transaction: jest.fn()
+      }
+    })
+  }));

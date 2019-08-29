@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './Home';
+import Barcodes from './components/Barcodes/Barcodes';
 
 describe ('Home', function () {
   let component;
@@ -7,6 +8,7 @@ describe ('Home', function () {
   let headerComponent = 'AisleHeader';
   let listComponent = 'Barcodes';
 
+  jest.mock('./components/Barcodes/Barcodes');
   beforeEach(function () {
     component = shallow (<Home />);
   });
