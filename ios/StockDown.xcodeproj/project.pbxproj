@@ -12,36 +12,35 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		1AD63017B03C4053271D593D /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* StockDownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* StockDownTests.m */; };
-		9032990C231783DC007C9352 /* DebugInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9062FBEB2308FD1B0020B9D6 /* DebugInfo.plist */; };
-		9032990D231783EA007C9352 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
-		9062FBCC2308FD1B0020B9D6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		9062FBCD2308FD1B0020B9D6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		9062FBCF2308FD1B0020B9D6 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
-		9062FBD22308FD1B0020B9D6 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73322E2657100FD1997 /* Fontisto.ttf */; };
-		9062FBD32308FD1B0020B9D6 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73E22E2657100FD1997 /* FontAwesome.ttf */; };
-		9062FBD42308FD1B0020B9D6 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73A22E2657100FD1997 /* Foundation.ttf */; };
-		9062FBD52308FD1B0020B9D6 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73D22E2657100FD1997 /* FontAwesome5_Regular.ttf */; };
-		9062FBD62308FD1B0020B9D6 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73B22E2657100FD1997 /* Ionicons.ttf */; };
-		9062FBD72308FD1B0020B9D6 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74022E2657100FD1997 /* EvilIcons.ttf */; };
-		9062FBD82308FD1B0020B9D6 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73622E2657100FD1997 /* Entypo.ttf */; };
-		9062FBD92308FD1B0020B9D6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		9062FBDA2308FD1B0020B9D6 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73F22E2657100FD1997 /* Zocial.ttf */; };
-		9062FBDB2308FD1B0020B9D6 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74122E2657100FD1997 /* SimpleLineIcons.ttf */; };
-		9062FBDC2308FD1B0020B9D6 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73522E2657100FD1997 /* Feather.ttf */; };
-		9062FBDD2308FD1B0020B9D6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
-		9062FBDE2308FD1B0020B9D6 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73422E2657100FD1997 /* Octicons.ttf */; };
-		9062FBDF2308FD1B0020B9D6 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73722E2657100FD1997 /* FontAwesome5_Brands.ttf */; };
-		9062FBE02308FD1B0020B9D6 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73922E2657100FD1997 /* AntDesign.ttf */; };
-		9062FBE12308FD1B0020B9D6 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74222E2657100FD1997 /* MaterialIcons.ttf */; };
-		9062FBE22308FD1B0020B9D6 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73C22E2657100FD1997 /* FontAwesome5_Solid.ttf */; };
-		9062FBE32308FD1B0020B9D6 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73822E2657100FD1997 /* MaterialCommunityIcons.ttf */; };
-		9062FBE42308FD1B0020B9D6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		909028B0231A0F6900604FAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		909028B1231A0F6900604FAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		909028B3231A0F6900604FAD /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
+		909028B4231A0F6900604FAD /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
+		909028B6231A0F6900604FAD /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73322E2657100FD1997 /* Fontisto.ttf */; };
+		909028B7231A0F6900604FAD /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73E22E2657100FD1997 /* FontAwesome.ttf */; };
+		909028B8231A0F6900604FAD /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73A22E2657100FD1997 /* Foundation.ttf */; };
+		909028B9231A0F6900604FAD /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73D22E2657100FD1997 /* FontAwesome5_Regular.ttf */; };
+		909028BA231A0F6900604FAD /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73B22E2657100FD1997 /* Ionicons.ttf */; };
+		909028BB231A0F6900604FAD /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74022E2657100FD1997 /* EvilIcons.ttf */; };
+		909028BC231A0F6900604FAD /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73622E2657100FD1997 /* Entypo.ttf */; };
+		909028BD231A0F6900604FAD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		909028BE231A0F6900604FAD /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73F22E2657100FD1997 /* Zocial.ttf */; };
+		909028BF231A0F6900604FAD /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74122E2657100FD1997 /* SimpleLineIcons.ttf */; };
+		909028C0231A0F6900604FAD /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73522E2657100FD1997 /* Feather.ttf */; };
+		909028C1231A0F6900604FAD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
+		909028C2231A0F6900604FAD /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73422E2657100FD1997 /* Octicons.ttf */; };
+		909028C3231A0F6900604FAD /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73722E2657100FD1997 /* FontAwesome5_Brands.ttf */; };
+		909028C4231A0F6900604FAD /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73922E2657100FD1997 /* AntDesign.ttf */; };
+		909028C5231A0F6900604FAD /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A74222E2657100FD1997 /* MaterialIcons.ttf */; };
+		909028C6231A0F6900604FAD /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73C22E2657100FD1997 /* FontAwesome5_Solid.ttf */; };
+		909028C7231A0F6900604FAD /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73822E2657100FD1997 /* MaterialCommunityIcons.ttf */; };
+		909028C8231A0F6900604FAD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		909028D0231A122C00604FAD /* DebugInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 909028CF231A0F6900604FAD /* DebugInfo.plist */; };
 		90E0A74322E2657100FD1997 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73322E2657100FD1997 /* Fontisto.ttf */; };
 		90E0A74422E2657100FD1997 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73422E2657100FD1997 /* Octicons.ttf */; };
 		90E0A74522E2657100FD1997 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 90E0A73522E2657100FD1997 /* Feather.ttf */; };
@@ -96,8 +95,10 @@
 		2D02E4901E0B4A5D006451C7 /* StockDown-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StockDown-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		774417ABA67237E5E2C18C13 /* libPods-StockDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9062FBEA2308FD1B0020B9D6 /* StockDown Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockDown Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9062FBEB2308FD1B0020B9D6 /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
+		909028A9231A065300604FAD /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		909028CE231A0F6900604FAD /* StockDown-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockDown-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		909028CF231A0F6900604FAD /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
 		90E0A73322E2657100FD1997 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		90E0A73422E2657100FD1997 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		90E0A73522E2657100FD1997 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 			files = (
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				FE0D864AC5ABDCD3B4221C6F /* libPods-StockDown.a in Frameworks */,
-				1AD63017B03C4053271D593D /* libPods-StockDown.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,11 +155,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9062FBCE2308FD1B0020B9D6 /* Frameworks */ = {
+		909028B2231A0F6900604FAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9062FBCF2308FD1B0020B9D6 /* JavaScriptCore.framework in Frameworks */,
+				909028B3231A0F6900604FAD /* JavaScriptCore.framework in Frameworks */,
+				909028B4231A0F6900604FAD /* libPods-StockDown.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,12 +223,14 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				909028A9231A065300604FAD /* Default-568h@2x.png */,
 				13B07FAE1A68108700A75B9A /* StockDown */,
 				00E356EF1AD99517003FC87E /* StockDownTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				90124C97223B725600E62404 /* Recovered References */,
 				6A66402CD0E3D08A9B39CA8A /* Pods */,
+				909028CF231A0F6900604FAD /* DebugInfo.plist */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -241,7 +244,7 @@
 				00E356EE1AD99517003FC87E /* StockDownTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* StockDown-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* StockDown-tvOSTests.xctest */,
-				9062FBEA2308FD1B0020B9D6 /* StockDown Debug.app */,
+				909028CE231A0F6900604FAD /* StockDown-Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -353,22 +356,24 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* StockDown-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9062FBC92308FD1B0020B9D6 /* StockDown Debug */ = {
+		909028AD231A0F6900604FAD /* StockDown-Debug */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9062FBE72308FD1B0020B9D6 /* Build configuration list for PBXNativeTarget "StockDown Debug" */;
+			buildConfigurationList = 909028CB231A0F6900604FAD /* Build configuration list for PBXNativeTarget "StockDown-Debug" */;
 			buildPhases = (
-				9062FBCB2308FD1B0020B9D6 /* Sources */,
-				9062FBCE2308FD1B0020B9D6 /* Frameworks */,
-				9062FBD12308FD1B0020B9D6 /* Resources */,
-				9062FBE52308FD1B0020B9D6 /* Bundle React Native code and images */,
+				909028AE231A0F6900604FAD /* [CP] Check Pods Manifest.lock */,
+				909028AF231A0F6900604FAD /* Sources */,
+				909028B2231A0F6900604FAD /* Frameworks */,
+				909028B5231A0F6900604FAD /* Resources */,
+				909028C9231A0F6900604FAD /* Bundle React Native code and images */,
+				909028CA231A0F6900604FAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "StockDown Debug";
+			name = "StockDown-Debug";
 			productName = "Hello World";
-			productReference = 9062FBEA2308FD1B0020B9D6 /* StockDown Debug.app */;
+			productReference = 909028CE231A0F6900604FAD /* StockDown-Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -397,7 +402,7 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
-					9062FBC92308FD1B0020B9D6 = {
+					909028AD231A0F6900604FAD = {
 						DevelopmentTeam = 4GN96668SR;
 					};
 				};
@@ -419,7 +424,7 @@
 				00E356ED1AD99517003FC87E /* StockDownTests */,
 				2D02E47A1E0B4A5D006451C7 /* StockDown-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* StockDown-tvOSTests */,
-				9062FBC92308FD1B0020B9D6 /* StockDown Debug */,
+				909028AD231A0F6900604FAD /* StockDown-Debug */,
 			);
 		};
 /* End PBXProject section */
@@ -444,7 +449,6 @@
 				90E0A75022E2657100FD1997 /* EvilIcons.ttf in Resources */,
 				90E0A74622E2657100FD1997 /* Entypo.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				9032990D231783EA007C9352 /* Info.plist in Resources */,
 				90E0A74F22E2657100FD1997 /* Zocial.ttf in Resources */,
 				90E0A75122E2657100FD1997 /* SimpleLineIcons.ttf in Resources */,
 				90E0A74522E2657100FD1997 /* Feather.ttf in Resources */,
@@ -474,30 +478,30 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9062FBD12308FD1B0020B9D6 /* Resources */ = {
+		909028B5231A0F6900604FAD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9062FBD22308FD1B0020B9D6 /* Fontisto.ttf in Resources */,
-				9062FBD32308FD1B0020B9D6 /* FontAwesome.ttf in Resources */,
-				9062FBD42308FD1B0020B9D6 /* Foundation.ttf in Resources */,
-				9062FBD52308FD1B0020B9D6 /* FontAwesome5_Regular.ttf in Resources */,
-				9062FBD62308FD1B0020B9D6 /* Ionicons.ttf in Resources */,
-				9062FBD72308FD1B0020B9D6 /* EvilIcons.ttf in Resources */,
-				9032990C231783DC007C9352 /* DebugInfo.plist in Resources */,
-				9062FBD82308FD1B0020B9D6 /* Entypo.ttf in Resources */,
-				9062FBD92308FD1B0020B9D6 /* Images.xcassets in Resources */,
-				9062FBDA2308FD1B0020B9D6 /* Zocial.ttf in Resources */,
-				9062FBDB2308FD1B0020B9D6 /* SimpleLineIcons.ttf in Resources */,
-				9062FBDC2308FD1B0020B9D6 /* Feather.ttf in Resources */,
-				9062FBDD2308FD1B0020B9D6 /* GoogleService-Info.plist in Resources */,
-				9062FBDE2308FD1B0020B9D6 /* Octicons.ttf in Resources */,
-				9062FBDF2308FD1B0020B9D6 /* FontAwesome5_Brands.ttf in Resources */,
-				9062FBE02308FD1B0020B9D6 /* AntDesign.ttf in Resources */,
-				9062FBE12308FD1B0020B9D6 /* MaterialIcons.ttf in Resources */,
-				9062FBE22308FD1B0020B9D6 /* FontAwesome5_Solid.ttf in Resources */,
-				9062FBE32308FD1B0020B9D6 /* MaterialCommunityIcons.ttf in Resources */,
-				9062FBE42308FD1B0020B9D6 /* LaunchScreen.xib in Resources */,
+				909028B6231A0F6900604FAD /* Fontisto.ttf in Resources */,
+				909028B7231A0F6900604FAD /* FontAwesome.ttf in Resources */,
+				909028B8231A0F6900604FAD /* Foundation.ttf in Resources */,
+				909028B9231A0F6900604FAD /* FontAwesome5_Regular.ttf in Resources */,
+				909028BA231A0F6900604FAD /* Ionicons.ttf in Resources */,
+				909028BB231A0F6900604FAD /* EvilIcons.ttf in Resources */,
+				909028BC231A0F6900604FAD /* Entypo.ttf in Resources */,
+				909028BD231A0F6900604FAD /* Images.xcassets in Resources */,
+				909028BE231A0F6900604FAD /* Zocial.ttf in Resources */,
+				909028BF231A0F6900604FAD /* SimpleLineIcons.ttf in Resources */,
+				909028C0231A0F6900604FAD /* Feather.ttf in Resources */,
+				909028C1231A0F6900604FAD /* GoogleService-Info.plist in Resources */,
+				909028D0231A122C00604FAD /* DebugInfo.plist in Resources */,
+				909028C2231A0F6900604FAD /* Octicons.ttf in Resources */,
+				909028C3231A0F6900604FAD /* FontAwesome5_Brands.ttf in Resources */,
+				909028C4231A0F6900604FAD /* AntDesign.ttf in Resources */,
+				909028C5231A0F6900604FAD /* MaterialIcons.ttf in Resources */,
+				909028C6231A0F6900604FAD /* FontAwesome5_Solid.ttf in Resources */,
+				909028C7231A0F6900604FAD /* MaterialCommunityIcons.ttf in Resources */,
+				909028C8231A0F6900604FAD /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +554,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9062FBE52308FD1B0020B9D6 /* Bundle React Native code and images */ = {
+		909028AE231A0F6900604FAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockDown-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		909028C9231A0F6900604FAD /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -563,6 +589,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		909028CA231A0F6900604FAD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/GoogleMobileVision/GoogleMVTextDetectorResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		B42E8B8E9F736D7CE41A2D9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -623,12 +667,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9062FBCB2308FD1B0020B9D6 /* Sources */ = {
+		909028AF231A0F6900604FAD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9062FBCC2308FD1B0020B9D6 /* AppDelegate.m in Sources */,
-				9062FBCD2308FD1B0020B9D6 /* main.m in Sources */,
+				909028B0231A0F6900604FAD /* AppDelegate.m in Sources */,
+				909028B1231A0F6900604FAD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +759,7 @@
 				DEVELOPMENT_TEAM = 4GN96668SR;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = StockDown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
@@ -738,6 +783,7 @@
 				DEVELOPMENT_TEAM = 4GN96668SR;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = StockDown/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
@@ -963,43 +1009,51 @@
 			};
 			name = Release;
 		};
-		9062FBE82308FD1B0020B9D6 /* Debug */ = {
+		909028CC231A0F6900604FAD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F32237EC2C1E526A935FFF51 /* Pods-StockDown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 4GN96668SR;
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "StockDown copy-Info.plist";
+				INFOPLIST_FILE = DebugInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDownDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
-		9062FBE92308FD1B0020B9D6 /* Release */ = {
+		909028CD231A0F6900604FAD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0158161A0D66EBB4513AB86 /* Pods-StockDown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4GN96668SR;
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = "StockDown copy-Info.plist";
+				INFOPLIST_FILE = DebugInfo.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDownDebug;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDown;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -1052,11 +1106,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9062FBE72308FD1B0020B9D6 /* Build configuration list for PBXNativeTarget "StockDown Debug" */ = {
+		909028CB231A0F6900604FAD /* Build configuration list for PBXNativeTarget "StockDown-Debug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9062FBE82308FD1B0020B9D6 /* Debug */,
-				9062FBE92308FD1B0020B9D6 /* Release */,
+				909028CC231A0F6900604FAD /* Debug */,
+				909028CD231A0F6900604FAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

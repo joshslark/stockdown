@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1010"
-   version = "1.3">
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
-               BuildableName = "StockDown Debug.app"
-               BlueprintName = "StockDown Debug"
+               BlueprintIdentifier = "909028AD231A0F6900604FAD"
+               BuildableName = "StockDown-Debug.app"
+               BlueprintName = "StockDown-Debug"
                ReferencedContainer = "container:StockDown.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
-            BuildableName = "StockDown Debug.app"
-            BlueprintName = "StockDown Debug"
+            BlueprintIdentifier = "909028AD231A0F6900604FAD"
+            BuildableName = "StockDown-Debug.app"
+            BlueprintName = "StockDown-Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,17 +55,21 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
-            BuildableName = "StockDown Debug.app"
-            BlueprintName = "StockDown Debug"
+            BlueprintIdentifier = "909028AD231A0F6900604FAD"
+            BuildableName = "StockDown-Debug.app"
+            BlueprintName = "StockDown-Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
+      <LocationScenarioReference
+         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
+         referenceType = "1">
+      </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -74,9 +78,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9062FBC92308FD1B0020B9D6"
-            BuildableName = "StockDown Debug.app"
-            BlueprintName = "StockDown Debug"
+            BlueprintIdentifier = "909028AD231A0F6900604FAD"
+            BuildableName = "StockDown-Debug.app"
+            BlueprintName = "StockDown-Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
