@@ -134,6 +134,8 @@ android {
         versionCode 1
         versionName "1.0"
 	missingDimensionStrategy 'react-native-camera', 'mlkit'
+        testBuildType System.getProperty('testBuildType', 'debug')
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
     splits {
         abi {
@@ -192,6 +194,8 @@ dependencies {
     implementation project(':react-native-camera')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    androidTestImplementation('com.wix:detox:+') { transitive = true }
+    androidTestImplementation 'junit:junit:4.12'
 
     if (enableHermes) {
       def hermesPath = "../../node_modules/hermesvm/android/";
