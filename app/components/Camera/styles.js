@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     width: 150,
     height: 45,
   },
-  barcodeBox: {
+  highlightBox: {
     position: 'absolute',
     padding: 10,
     borderWidth: 2,

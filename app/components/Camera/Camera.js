@@ -7,9 +7,11 @@ import styles from './styles';
 export default class Camera extends Component {
   // prevBarcode used to prevent repeat barcodes
   state = {
-    paused: true,
+    paused: false,
     canDetectBarcode: true,
     canDetectText: false,
+    debug: true,
+    debugBox: false,
     prevBarcode: 0,
     barcodes: [],
     textBlocks: [],
@@ -25,6 +27,51 @@ export default class Camera extends Component {
   // that was scanned
   componentDidMount() {
     this.add = this.props.saveBarcode;
+    if (this.state.debug) {
+      sampleBarcodes = [{
+	data: "98071001382486",
+	bounds: {
+	    size: {
+	      width: 200,
+	      height: 50
+	    },
+	    origin: {
+	      x: 50,
+	      y: 50
+	    }
+	},
+	type: "code128"
+      },
+      {
+	data: "98071003238840",
+	bounds: {
+	    size: {
+	      width: 200,
+	      height: 50
+	    },
+	    origin: {
+	      x: 50,
+	      y: 110
+	    }
+	},
+	type: "code128"
+      },
+      {
+	data: "98071002166126",
+	bounds: {
+	    size: {
+	      width: 200,
+	      height: 50
+	    },
+	    origin: {
+	      x: 50,
+	      y: 170
+	    }
+	},
+	type: "code128"
+      }];
+    this.setState({barcodes: sampleBarcodes});
+    }
   }
 
   renderTextblocks = () => (
@@ -52,12 +99,12 @@ export default class Camera extends Component {
 
   renderBarcodes = () => (
     <View style={styles.upperCorner}>
-      {this.state.barcodes.map(barcode => this.renderBarcode(barcode))}
+      {this.state.barcodes.map((barcode,index) => this.renderBarcode(barcode,index))}
     </View>
   );
 
-  renderBarcode = ({bounds, data, type}) => (
-    <React.Fragment key={data + bounds.origin.x}>
+  renderBarcode = ({bounds, data, type}, barcodeIndex) => 
+    (<React.Fragment key={data + bounds.origin.x}>
       <TouchableOpacity
         style={[
           styles.highlightBox,
@@ -67,6 +114,7 @@ export default class Camera extends Component {
             top: bounds.origin.y,
           },
         ]}
+	testID={"barcode" + barcodeIndex}
         onPress={() => {
           let sku = recognizeSku(data);
           sku ? this.add(sku) : this.add(data);
@@ -108,8 +156,7 @@ export default class Camera extends Component {
   };
 
   render() {
-    const {canDetectBarcode, canDetectText} = this.state;
-    const debug = true;
+    const {canDetectBarcode, canDetectText, debugBox} = this.state;
     return (
       <RNCamera
         ref={this.camera}
@@ -124,7 +171,7 @@ export default class Camera extends Component {
         }>
         {!!canDetectBarcode && this.renderBarcodes()}
         {!!canDetectText && this.renderTextblocks()}
-        {!!debug && <View style={styles.debugBarcodeBox} />}
+        {!!debugBox && <View style={styles.debugBarcodeBox} />}
         {this.state.selectedText.length > 0 && this.renderSelectedText()}
       </RNCamera>
     );
