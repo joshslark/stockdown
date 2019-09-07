@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   debugBarcodeBox: {
-    position:"absolute",
+    position: 'absolute',
     padding: 10,
     borderWidth: 2,
     borderRadius: 2,
@@ -15,41 +15,30 @@ const styles = StyleSheet.create({
     width: 150,
     height: 45,
   },
-  listContainer: {
-    flex: 2, 
-    width: '100%',
-    backgroundColor: 'rgb(172,122,66)',
-  },
-  listHeaderContainer: {
-    flex: 2,
-    justifyContent: 'flex-start',
-  },
-  listHeaderBox: {
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    backgroundColor: 'rgb(233,207,178)',
-  },
-  listHeaderText: {
-    alignSelf: 'center',
-    fontSize: 36,
-    borderBottomWidth: 1,
+  barcodeBox: {
+    position: 'absolute',
     padding: 10,
-    color: 'black',
+    borderWidth: 2,
+    borderRadius: 2,
+    borderColor: '#F00',
   },
-  listItem: {
-    height: 50,
-    width: '95%',
-    alignSelf: 'flex-end',
-    borderBottomColor: 'grey',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    paddingLeft: 10,
-    justifyContent: 'center',
-    backgroundColor: 'rgb(235,232,215)',
+  upperCorner: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0,
+    top: 0,
   },
-  listItemLeftMargin: {
-    backgroundColor: 'rgb(235,232,215)',
+  infoTextPosition: {
+    position: 'absolute',
+    bottom: '5%',
+    width: '100%',
   },
-  listItemText: {
-    color: 'black'
+  infoText: {
+    color: 'white',
+    fontSize: 36,
+    textAlign: 'center',
+    marginTop: '1%',
   },
 });
 

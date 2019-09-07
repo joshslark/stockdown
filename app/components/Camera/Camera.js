@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import {View, Text, Alert, TouchableOpacity, Dimensions} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {RNCamera} from 'react-native-camera';
-import {recognizeSku} from '../utility/SkuParser'
+import {recognizeSku} from '../utility/SkuParser';
 import styles from './styles';
 
 export default class Camera extends Component {
-
   // prevBarcode used to prevent repeat barcodes
   state = {
     paused: true,
@@ -14,14 +13,13 @@ export default class Camera extends Component {
     prevBarcode: 0,
     barcodes: [],
     textBlocks: [],
-    selectedText: "",
+    selectedText: '',
   };
 
   constructor(props) {
     super(props);
     this.camera = React.createRef();
   }
-
 
   // saveBarcode prop is callback to save the barcode
   // that was scanned
@@ -31,21 +29,15 @@ export default class Camera extends Component {
 
   renderTextblocks = () => (
     <View>
-      {this.state.textBlocks.map((textBlock) => this.renderTextblock(textBlock))}
+      {this.state.textBlocks.map(textBlock => this.renderTextblock(textBlock))}
     </View>
   );
 
-  renderTextblock = ({bounds,value}) => (
+  renderTextblock = ({bounds, value}) => (
     <React.Fragment key={value + bounds.origin.x}>
       <TouchableOpacity
-        style = {[
-          {
-            position:"absolute",
-            padding: 10,
-            borderWidth: 2,
-            borderRadius: 2,
-            borderColor: '#F00',
-          },
+        style={[
+          styles.barcodeBox,
           {
             ...bounds.size,
             left: bounds.origin.x,
@@ -57,30 +49,18 @@ export default class Camera extends Component {
       />
     </React.Fragment>
   );
-      
+
   renderBarcodes = () => (
-    <View style={{
-      position: 'absolute',
-      bottom: 0,
-      right: 0,
-      left: 0,
-      top: 0,
-    }}>
-      {this.state.barcodes.map((barcode) => this.renderBarcode(barcode))}
+    <View style={styles.upperCorner}>
+      {this.state.barcodes.map(barcode => this.renderBarcode(barcode))}
     </View>
   );
 
-  renderBarcode = ({ bounds, data, type}) => (
+  renderBarcode = ({bounds, data, type}) => (
     <React.Fragment key={data + bounds.origin.x}>
       <TouchableOpacity
-        style = {[
-          {
-            position:"absolute",
-            padding: 10,
-            borderWidth: 2,
-            borderRadius: 2,
-            borderColor: '#F00',
-          },
+        style={[
+          styles.highlightBox,
           {
             ...bounds.size,
             left: bounds.origin.x,
@@ -92,53 +72,15 @@ export default class Camera extends Component {
           sku ? this.add(sku) : this.add(data);
         }}
         activeOpacity={0.8}
-      >
-      </TouchableOpacity>
+      />
     </React.Fragment>
   );
 
   renderSelectedText = () => (
-    <View
-      pointerEvents= "none"
-      style= {{
-	position:"absolute",
-	bottom: "5%",
-	width: "100%",
-      }}>
-      <Text 
-	style={{
-	    color:"white",
-	    fontSize: 36,
-	    textAlign: "center",
-	    marginTop: "1%",
-	  }}
-	
-      >
-    {this.state.selectedText}
-      </Text>
+    <View pointerEvents="none" style={styles.infoTextPosition}>
+      <Text style={styles.infoText}>{this.state.selectedText}</Text>
     </View>
   );
-
-  render () {
-    const {canDetectBarcode, canDetectText} = this.state; 
-    const debug=true;
-    return (
-      <RNCamera
-	ref={this.camera}
-	captureAudio={false}
-	style={styles.cameraBox}
-	onTextRecognized={canDetectText ? this.textRecognized : null}
-	onGoogleVisionBarcodesDetected={
-	  canDetectBarcode ? this.barcodeRecognized: null}
-	googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All}
-      >
-      {!!canDetectBarcode && this.renderBarcodes()}
-      {!!canDetectText && this.renderTextblocks()}
-      {!!debug && (<View style={styles.debugBarcodeBox}/>)}
-      {(this.state.selectedText.length > 0) && this.renderSelectedText()}
-      </RNCamera>
-    );
-  }
 
   pauseCameraToggle = () => {
     this.setState({
@@ -146,34 +88,45 @@ export default class Camera extends Component {
       canDetectText: !this.state.canDetectText,
     });
     console.log(
-      this.state.paused ? 
-      'The camera is paused' : 'The camera is active'
+      this.state.paused ? 'The camera is paused' : 'The camera is active',
     );
-    this.state.paused
-      ? this.pauseCamera()
-      : this.resumeCamera();
-  }
+    this.state.paused ? this.pauseCamera() : this.resumeCamera();
+  };
 
-  // new function for google vision barcode scanning
-  barcodeRecognized = ({ barcodes }) => this.setState({ barcodes });
+  barcodeRecognized = ({barcodes}) => this.setState({barcodes});
 
   textRecognized = object => {
-    const { textBlocks } = object;
-    this.setState({ textBlocks });
+    const {textBlocks} = object;
+    this.setState({textBlocks});
   };
 
-  // function previously used for ios barcode scanning
-  processBarcode = (barcode) => {
-    if (barcode.data === this.state.prevBarcode) {
-      return;
-    }
-    const barcodeData = barcode.data;
-    this.setState({prevBarcode: barcodeData});
-    var sku = recognizeSku(barcode.data);
-
-    sku ? this.add(sku): this.add(barcode.data);
+  pauseCamera = () => {
+    this.camera.current.pausePreview();
+  };
+  resumeCamera = () => {
+    this.camera.current.resumePreview();
   };
 
-  pauseCamera = () => {this.camera.current.pausePreview()};
-  resumeCamera = () => {this.camera.current.resumePreview()};
+  render() {
+    const {canDetectBarcode, canDetectText} = this.state;
+    const debug = true;
+    return (
+      <RNCamera
+        ref={this.camera}
+        captureAudio={false}
+        style={styles.cameraBox}
+        onTextRecognized={canDetectText ? this.textRecognized : null}
+        onGoogleVisionBarcodesDetected={
+          canDetectBarcode ? this.barcodeRecognized : null
+        }
+        googleVisionBarcodeType={
+          RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All
+        }>
+        {!!canDetectBarcode && this.renderBarcodes()}
+        {!!canDetectText && this.renderTextblocks()}
+        {!!debug && <View style={styles.debugBarcodeBox} />}
+        {this.state.selectedText.length > 0 && this.renderSelectedText()}
+      </RNCamera>
+    );
+  }
 }
