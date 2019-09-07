@@ -4,6 +4,17 @@ const styles = StyleSheet.create({
   cameraBox: {
     flex: 1,
   },
+  debugBarcodeBox: {
+    position:"absolute",
+    padding: 10,
+    borderWidth: 2,
+    borderRadius: 2,
+    borderColor: 'green',
+    top: 60,
+    left: 120,
+    width: 150,
+    height: 45,
+  },
   listContainer: {
     flex: 2, 
     width: '100%',

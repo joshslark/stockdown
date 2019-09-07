@@ -121,6 +121,7 @@ export default class Camera extends Component {
 
   render () {
     const {canDetectBarcode, canDetectText} = this.state; 
+    const debug=true;
     return (
       <RNCamera
 	ref={this.camera}
@@ -133,6 +134,7 @@ export default class Camera extends Component {
       >
       {!!canDetectBarcode && this.renderBarcodes()}
       {!!canDetectText && this.renderTextblocks()}
+      {!!debug && (<View style={styles.debugBarcodeBox}/>)}
       {(this.state.selectedText.length > 0) && this.renderSelectedText()}
       </RNCamera>
     );
