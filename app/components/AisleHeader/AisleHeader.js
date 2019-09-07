@@ -1,22 +1,26 @@
 import React, {Component} from 'react';
 
 import {
-  Text,
+  TextInput,
   View,
 } from 'react-native';
 import styles from './styles';
 
-export default class AisleHeader extends Component {
-  render() {
-    return (
-      <View
-        style={ styles.listHeaderBox }>
-      <Text
-        style={ styles.listHeaderText }>
-        Aisle {this.props.number}
-      </Text>
-      </View>
-    );
-  }
+export default function AisleHeader() {
+  const [value, onChangeText] = React.useState("New List"); 
+  
+  return (
+    <View
+      style={ styles.listHeaderBox }>
+      <TextInput
+	style={ styles.listHeaderText }
+	testID="listTitleInput"
+	onChangeText={(text) => onChangeText(text)}
+	underlineColorAndroid={'transparent'}
+	value={value}
+      >
+      </TextInput>
+    </View>
+  );
 }
 
