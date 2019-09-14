@@ -20,15 +20,16 @@ export default class Home extends Component {
   render() {
     const barcode = this.state.barcode;
     return (
-      <View style= {{flex:1, width:'100%'}}>
-	<Camera
-	  saveBarcode={(data)=>this.setState({barcode: data})}
-	/>
+      <View style= {{flex:1, width:'100%', height:'100%'}}>
+	<View style= {{backgroundColor:'rgb(233,207,178)', height:'5%'}}/>
 	<AisleHeader
 	  number="09"
 	/>
         <Barcodes 
           addBarcode={barcode}/>
+	<Camera
+	  saveBarcode={(data)=>this.setState({barcode: data})}
+	/>
       </View>
     );
   }
