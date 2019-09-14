@@ -28,12 +28,6 @@ export default class Barcodes extends Component {
     );
   };
 
-  //Todo fix
-  update = () => {
-    console.log ("Updating from database");
-    this.barcodesList && this.barcodesList.update();
-  };
-
   handleError = (e) => {
     console.log (e);
   };
@@ -42,8 +36,11 @@ export default class Barcodes extends Component {
     db.transaction(tx => {
       tx.executeSql(
         `create table if not exists barcodes (id integer primary key not null, data text);`
-      );
-    });
+	);
+      },
+      this.handleError,
+      this.update
+    );
   }
 
   componentDidUpdate() {
