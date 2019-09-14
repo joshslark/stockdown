@@ -130,6 +130,7 @@ export default class Camera extends Component {
 	onGoogleVisionBarcodesDetected={
 	  canDetectBarcode ? this.barcodeRecognized: null}
 	googleVisionBarcodeType={RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All}
+        testID="rncamera"
       >
       {!!canDetectBarcode && this.renderBarcodes()}
       {!!canDetectText && this.renderTextblocks()}
