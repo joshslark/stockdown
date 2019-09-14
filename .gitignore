@@ -65,3 +65,4 @@ GoogleService-Info.plist
 
 # CocoaPods
 /ios/Pods/
+/ios/index
