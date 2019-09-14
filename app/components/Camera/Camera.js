@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {RNCamera} from 'react-native-camera';
+import {AddAllBarcodesBtn} from '../Buttons'
 import {recognizeSku} from '../utility/SkuParser';
 import styles from './styles';
 
@@ -100,6 +101,7 @@ export default class Camera extends Component {
   renderBarcodes = () => (
     <View style={styles.upperCorner}>
       {this.state.barcodes.map((barcode,index) => this.renderBarcode(barcode,index))}
+      <AddAllBarcodesBtn/>
     </View>
   );
 
