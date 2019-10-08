@@ -9,17 +9,16 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 
-import Home from './app/Home'
+import Home from './app/Home';
 console.disableYellowBox = true;
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
-      <View style={{flex:1}}>
-      <Home />
+      <View style={{flex: 1}}>
+        <Home />
       </View>
     );
   }

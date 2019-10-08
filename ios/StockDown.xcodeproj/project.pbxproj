@@ -18,11 +18,13 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* StockDownTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* StockDownTests.m */; };
-		906EC00B232C5B520022E997 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		906EC00C232C5B520022E997 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		906EC017232C5B520022E997 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		906EC01B232C5B520022E997 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
-		906EC022232C5B520022E997 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		901EED10234D53EE00AAC328 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		901EED11234D53EE00AAC328 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		901EED13234D53EE00AAC328 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
+		901EED14234D53EE00AAC328 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
+		901EED16234D53EE00AAC328 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		901EED17234D53EE00AAC328 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
+		901EED18234D53EE00AAC328 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
 		B87B25A272183FFE6B71B089 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -61,8 +63,8 @@
 		2D02E4901E0B4A5D006451C7 /* StockDown-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StockDown-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		774417ABA67237E5E2C18C13 /* libPods-StockDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		901EED1E234D53EE00AAC328 /* StockDown-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockDown-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9062FBEB2308FD1B0020B9D6 /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
-		906EC028232C5B520022E997 /* StockDown-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockDown-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909028CF231A0F6900604FAD /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
 		90E1C0F923027DCC0058457E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "StockDown/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A0D7938279E6AF4F9DA71236 /* Pods-StockDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown.release.xcconfig"; path = "Target Support Files/Pods-StockDown/Pods-StockDown.release.xcconfig"; sourceTree = "<group>"; };
@@ -103,10 +105,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		906EC00D232C5B520022E997 /* Frameworks */ = {
+		901EED12234D53EE00AAC328 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901EED13234D53EE00AAC328 /* libPods-StockDown.a in Frameworks */,
+				901EED14234D53EE00AAC328 /* libPods-StockDown.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,7 +192,7 @@
 				00E356EE1AD99517003FC87E /* StockDownTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* StockDown-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* StockDown-tvOSTests.xctest */,
-				906EC028232C5B520022E997 /* StockDown-Debug.app */,
+				901EED1E234D53EE00AAC328 /* StockDown-Debug.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -277,14 +281,16 @@
 			productReference = 2D02E4901E0B4A5D006451C7 /* StockDown-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		906EC008232C5B520022E997 /* StockDown-Debug */ = {
+		901EED0D234D53EE00AAC328 /* StockDown-Debug */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 906EC025232C5B520022E997 /* Build configuration list for PBXNativeTarget "StockDown-Debug" */;
+			buildConfigurationList = 901EED1B234D53EE00AAC328 /* Build configuration list for PBXNativeTarget "StockDown-Debug" */;
 			buildPhases = (
-				906EC00A232C5B520022E997 /* Sources */,
-				906EC00D232C5B520022E997 /* Frameworks */,
-				906EC00F232C5B520022E997 /* Resources */,
-				906EC023232C5B520022E997 /* Bundle React Native code and images */,
+				901EED0E234D53EE00AAC328 /* [CP] Check Pods Manifest.lock */,
+				901EED0F234D53EE00AAC328 /* Sources */,
+				901EED12234D53EE00AAC328 /* Frameworks */,
+				901EED15234D53EE00AAC328 /* Resources */,
+				901EED19234D53EE00AAC328 /* Bundle React Native code and images */,
+				901EED1A234D53EE00AAC328 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,7 +298,7 @@
 			);
 			name = "StockDown-Debug";
 			productName = "Hello World";
-			productReference = 906EC028232C5B520022E997 /* StockDown-Debug.app */;
+			productReference = 901EED1E234D53EE00AAC328 /* StockDown-Debug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -321,7 +327,7 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
-					906EC008232C5B520022E997 = {
+					901EED0D234D53EE00AAC328 = {
 						DevelopmentTeam = 4GN96668SR;
 					};
 				};
@@ -343,7 +349,7 @@
 				00E356ED1AD99517003FC87E /* StockDownTests */,
 				2D02E47A1E0B4A5D006451C7 /* StockDown-tvOS */,
 				2D02E48F1E0B4A5D006451C7 /* StockDown-tvOSTests */,
-				906EC008232C5B520022E997 /* StockDown-Debug */,
+				901EED0D234D53EE00AAC328 /* StockDown-Debug */,
 			);
 		};
 /* End PBXProject section */
@@ -381,13 +387,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		906EC00F232C5B520022E997 /* Resources */ = {
+		901EED15234D53EE00AAC328 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				906EC017232C5B520022E997 /* Images.xcassets in Resources */,
-				906EC01B232C5B520022E997 /* GoogleService-Info.plist in Resources */,
-				906EC022232C5B520022E997 /* LaunchScreen.xib in Resources */,
+				901EED16234D53EE00AAC328 /* Images.xcassets in Resources */,
+				901EED17234D53EE00AAC328 /* GoogleService-Info.plist in Resources */,
+				901EED18234D53EE00AAC328 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +478,29 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		906EC023232C5B520022E997 /* Bundle React Native code and images */ = {
+		901EED0E234D53EE00AAC328 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockDown-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		901EED19234D53EE00AAC328 /* Bundle React Native code and images */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,6 +513,56 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		901EED1A234D53EE00AAC328 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseMLVisionTextModel/GoogleMVTextDetectorResources.bundle",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Foundation.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Octicons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf",
+				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Zocial.ttf",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMVTextDetectorResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AntDesign.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Entypo.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EvilIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Feather.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Brands.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Regular.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FontAwesome5_Solid.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Fontisto.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Foundation.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Ionicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialCommunityIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MaterialIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Octicons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SimpleLineIcons.ttf",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Zocial.ttf",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockDown/Pods-StockDown-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		B42E8B8E9F736D7CE41A2D9B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -545,12 +623,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		906EC00A232C5B520022E997 /* Sources */ = {
+		901EED0F234D53EE00AAC328 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				906EC00B232C5B520022E997 /* AppDelegate.m in Sources */,
-				906EC00C232C5B520022E997 /* main.m in Sources */,
+				901EED10234D53EE00AAC328 /* AppDelegate.m in Sources */,
+				901EED11234D53EE00AAC328 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -887,8 +965,9 @@
 			};
 			name = Release;
 		};
-		906EC026232C5B520022E997 /* Debug */ = {
+		901EED1C234D53EE00AAC328 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2167190259E4058974A29075 /* Pods-StockDown.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -904,15 +983,16 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.StockDown-Debug";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDown;
+				PRODUCT_NAME = "StockDown-Debug";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
-		906EC027232C5B520022E997 /* Release */ = {
+		901EED1D234D53EE00AAC328 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0D7938279E6AF4F9DA71236 /* Pods-StockDown.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -927,8 +1007,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.StockDown-Debug";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.StockDown;
+				PRODUCT_NAME = "StockDown-Debug";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -982,11 +1062,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		906EC025232C5B520022E997 /* Build configuration list for PBXNativeTarget "StockDown-Debug" */ = {
+		901EED1B234D53EE00AAC328 /* Build configuration list for PBXNativeTarget "StockDown-Debug" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				906EC026232C5B520022E997 /* Debug */,
-				906EC027232C5B520022E997 /* Release */,
+				901EED1C234D53EE00AAC328 /* Debug */,
+				901EED1D234D53EE00AAC328 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

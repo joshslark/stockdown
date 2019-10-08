@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,21 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C99C924386F2D84AEE8D2B6077599247"
-               BuildableName = "libPods-StockDown.a"
-               BlueprintName = "Pods-StockDown"
-               ReferencedContainer = "container:Pods/Pods.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "906EC008232C5B520022E997"
+               BlueprintIdentifier = "901EED0D234D53EE00AAC328"
                BuildableName = "StockDown-Debug.app"
                BlueprintName = "StockDown-Debug"
                ReferencedContainer = "container:StockDown.xcodeproj">
@@ -43,17 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "906EC008232C5B520022E997"
-            BuildableName = "StockDown-Debug.app"
-            BlueprintName = "StockDown-Debug"
-            ReferencedContainer = "container:StockDown.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -69,14 +44,12 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "906EC008232C5B520022E997"
+            BlueprintIdentifier = "901EED0D234D53EE00AAC328"
             BuildableName = "StockDown-Debug.app"
             BlueprintName = "StockDown-Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -88,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "906EC008232C5B520022E997"
+            BlueprintIdentifier = "901EED0D234D53EE00AAC328"
             BuildableName = "StockDown-Debug.app"
             BlueprintName = "StockDown-Debug"
             ReferencedContainer = "container:StockDown.xcodeproj">
