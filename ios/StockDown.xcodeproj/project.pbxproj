@@ -15,6 +15,7 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		17C36FD90A25F796C6805B79 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
+		181B91EED50C46B796BC95C9 /* libRealmJS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D8879CE12D45968AB1FAA4 /* libRealmJS.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -26,9 +27,10 @@
 		901EED16234D53EE00AAC328 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		901EED17234D53EE00AAC328 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
 		901EED18234D53EE00AAC328 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
-		9088C674235A4D610014DB3C /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9088C673235A4D610014DB3C /* libPods-StockDown.a */; };
 		90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
+		A07C131CFF89490F8BCC935F /* libGCDWebServers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FC3768ADC436795CDC51A /* libGCDWebServers.a */; };
 		B87B25A272183FFE6B71B089 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
+		D54E390B97D74A7EA10A3564 /* RealmJSTests.xctest in Frameworks */ = {isa = PBXBuildFile; fileRef = BE22562C7DE7414E85AC8774 /* RealmJSTests.xctest */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
 		F2C31FC819010A48D172657D /* libPods-StockDown-StockDownTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6603B53CEBAB6951C6DAA22 /* libPods-StockDown-StockDownTests.a */; };
 /* End PBXBuildFile section */
@@ -47,6 +49,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "StockDown-tvOS";
+		};
+		9088C67A235A5A630014DB3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F63FF2F01C16405C00B3B8E0;
+			remoteInfo = GCDWebServers;
+		};
+		9088C67C235A5A630014DB3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F63FF2B11C1241E500B3B8E0;
+			remoteInfo = RealmJS;
+		};
+		9088C67E235A5A630014DB3C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 02B58CBC1AE99CEC009B348C;
+			remoteInfo = RealmJSTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -67,6 +90,7 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDE442FFB42EF77AF29159E /* Pods-StockDown-StockDownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-StockDownTests.debug.xcconfig"; path = "Target Support Files/Pods-StockDown-StockDownTests/Pods-StockDown-StockDownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47CF1A7E62BC7EB58FA0623C /* Pods-StockDown-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-StockDown-tvOS/Pods-StockDown-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmJS.xcodeproj; path = ../node_modules/realm/src/RealmJS.xcodeproj; sourceTree = "<group>"; };
 		577E3D151894CA331309F8E8 /* Pods-StockDown-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-StockDown-tvOSTests/Pods-StockDown-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		69EC93EB82140B3B96DE0F8F /* Pods-StockDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown.debug.xcconfig"; path = "Target Support Files/Pods-StockDown/Pods-StockDown.debug.xcconfig"; sourceTree = "<group>"; };
 		759034DB8561C5DDAD123640 /* Pods-StockDown-StockDownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-StockDownTests.release.xcconfig"; path = "Target Support Files/Pods-StockDown-StockDownTests/Pods-StockDown-StockDownTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,11 +98,13 @@
 		7D21287F571761313261ABDC /* libPods-StockDown-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockDown-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		901EED1E234D53EE00AAC328 /* StockDown-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockDown-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9062FBEB2308FD1B0020B9D6 /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
-		9088C673235A4D610014DB3C /* libPods-StockDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-StockDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		909028CF231A0F6900604FAD /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
 		90E1C0F923027DCC0058457E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "StockDown/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AFDBAC3DFDF6DD6E63BF24F0 /* Pods-StockDown-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-StockDown-tvOSTests/Pods-StockDown-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B6D8879CE12D45968AB1FAA4 /* libRealmJS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRealmJS.a; sourceTree = "<group>"; };
+		BE22562C7DE7414E85AC8774 /* RealmJSTests.xctest */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RealmJSTests.xctest; sourceTree = "<group>"; };
 		C8FCF3093BF026AB9AF2746C /* Pods-StockDown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown.release.xcconfig"; path = "Target Support Files/Pods-StockDown/Pods-StockDown.release.xcconfig"; sourceTree = "<group>"; };
+		CE7FC3768ADC436795CDC51A /* libGCDWebServers.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libGCDWebServers.a; sourceTree = "<group>"; };
 		E6603B53CEBAB6951C6DAA22 /* libPods-StockDown-StockDownTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockDown-StockDownTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -101,6 +127,9 @@
 				B87B25A272183FFE6B71B089 /* libPods-StockDown.a in Frameworks */,
 				17C36FD90A25F796C6805B79 /* libPods-StockDown.a in Frameworks */,
 				2D0CB38B0AB2468C005A3E74 /* libPods-StockDown.a in Frameworks */,
+				A07C131CFF89490F8BCC935F /* libGCDWebServers.a in Frameworks */,
+				181B91EED50C46B796BC95C9 /* libRealmJS.a in Frameworks */,
+				D54E390B97D74A7EA10A3564 /* RealmJSTests.xctest in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9088C674235A4D610014DB3C /* libPods-StockDown.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +196,6 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9088C673235A4D610014DB3C /* libPods-StockDown.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -205,6 +232,7 @@
 				90124C97223B725600E62404 /* Recovered References */,
 				6A66402CD0E3D08A9B39CA8A /* Pods */,
 				909028CF231A0F6900604FAD /* DebugInfo.plist */,
+				B6D3FE884E594EED9131AA57 /* Libraries */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -226,8 +254,29 @@
 		90124C97223B725600E62404 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
+				CE7FC3768ADC436795CDC51A /* libGCDWebServers.a */,
+				B6D8879CE12D45968AB1FAA4 /* libRealmJS.a */,
+				BE22562C7DE7414E85AC8774 /* RealmJSTests.xctest */,
 			);
 			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		9088C675235A5A630014DB3C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9088C67B235A5A630014DB3C /* libGCDWebServers.a */,
+				9088C67D235A5A630014DB3C /* libRealmJS.a */,
+				9088C67F235A5A630014DB3C /* RealmJSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B6D3FE884E594EED9131AA57 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */,
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +420,12 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9088C675235A5A630014DB3C /* Products */;
+					ProjectRef = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* StockDown */,
@@ -381,6 +436,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9088C67B235A5A630014DB3C /* libGCDWebServers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libGCDWebServers.a;
+			remoteRef = 9088C67A235A5A630014DB3C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9088C67D235A5A630014DB3C /* libRealmJS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRealmJS.a;
+			remoteRef = 9088C67C235A5A630014DB3C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9088C67F235A5A630014DB3C /* RealmJSTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RealmJSTests.xctest;
+			remoteRef = 9088C67E235A5A630014DB3C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -742,11 +821,19 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = StockDownTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -764,11 +851,19 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = 4GN96668SR;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = StockDownTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -787,7 +882,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 4GN96668SR;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = StockDown/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -811,7 +909,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4GN96668SR;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = StockDown/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -841,10 +942,18 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = "StockDown-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -870,10 +979,18 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = "StockDown-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -898,10 +1015,18 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = "StockDown-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -926,10 +1051,18 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = "StockDown-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1050,7 +1183,10 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = 4GN96668SR;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = DebugInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1073,7 +1209,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4GN96668SR;
-				HEADER_SEARCH_PATHS = "$(inherited)";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/realm/src/**",
+				);
 				INFOPLIST_FILE = DebugInfo.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

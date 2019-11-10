@@ -35,8 +35,10 @@ export default class Barcodes extends Component {
   componentDidMount() {
     db.transaction(tx => {
       tx.executeSql(
-        `create table if not exists barcodes (id integer primary key not null, data text);`
+        `create table if not exists barcodes (id integer primary key not null, listTitleId foreign key not null, data text);`
 	);
+      tx.executeSql(
+        `create table if not exists barcodeListTitles (id integer primary key not null, title text);`
       },
       this.handleError,
       this.update

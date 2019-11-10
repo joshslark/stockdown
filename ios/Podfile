@@ -47,7 +47,7 @@ target 'StockDown' do
     # Pods for testing
   end
 
-  use_native_modules!
+use_native_modules!
 end
   
 target 'StockDown-tvOS' do

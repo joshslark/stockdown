@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SQLite from 'react-native-sqlite-storage';
 
 import {
   TextInput,
