@@ -4,6 +4,7 @@ import {RNCamera} from 'react-native-camera';
 import {AddAllBarcodesBtn} from '../Buttons'
 import {recognizeSku} from '../utility/SkuParser';
 import styles from './styles';
+import {DataContext} from '../../Home.js'
 
 export default class Camera extends Component {
   // prevBarcode used to prevent repeat barcodes
@@ -27,7 +28,6 @@ export default class Camera extends Component {
   // saveBarcode prop is callback to save the barcode
   // that was scanned
   componentDidMount() {
-    this.add = this.props.saveBarcode;
     if (this.state.debug) {
       sampleBarcodes = [{
 	data: "98071001382486",
@@ -100,29 +100,33 @@ export default class Camera extends Component {
 
   renderBarcodes = () => (
     <View style={styles.upperCorner}>
-      {this.state.barcodes.map((barcode,index) => this.renderBarcode(barcode,index))}
+      {this.state.barcodes.map((barcode,index) => this.renderBarcode(barcode, index))}
       <AddAllBarcodesBtn/>
     </View>
   );
 
   renderBarcode = ({bounds, data, type}, barcodeIndex) => 
     (<React.Fragment key={data + bounds.origin.x}>
-      <TouchableOpacity
-        style={[
-          styles.highlightBox,
-          {
-            ...bounds.size,
-            left: bounds.origin.x,
-            top: bounds.origin.y,
-          },
-        ]}
-	testID={"barcode" + barcodeIndex}
-        onPress={() => {
-          let sku = recognizeSku(data);
-          sku ? this.add(sku) : this.add(data);
-        }}
-        activeOpacity={0.8}
-      />
+      <DataContext.Consumer>
+        {(context) => (
+          <TouchableOpacity
+            style={[
+              styles.highlightBox,
+              {
+                ...bounds.size,
+                left: bounds.origin.x,
+                top: bounds.origin.y,
+              },
+            ]}
+            testID={"barcode" + barcodeIndex}
+            onPress={() => {
+              let sku = recognizeSku(data);
+              sku ? context.setBarcode(sku) : context.setBarcode(data);
+            }}
+            activeOpacity={0.8}
+          />
+        )}
+      </DataContext.Consumer>
     </React.Fragment>
   );
 

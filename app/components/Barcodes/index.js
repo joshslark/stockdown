@@ -1,1 +1,1 @@
-export {default as Barcodes} from './Barcodes';
+export Barcodes from './Barcodes';
