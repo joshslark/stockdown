@@ -6763,6 +6763,11 @@ react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6, react-is
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
   integrity sha512-tJBzzzIgnnRfEm046qRcURvwQnZVXmuCbscxUO5RWrGTXpon2d4c8mI0D8WE6ydVIm29JiLB6+RslkIvym9Rjw==
 
+react-native-activity-view@^0.2.11:
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/react-native-activity-view/-/react-native-activity-view-0.2.11.tgz#844e1f745a7215f3bfe54e2ef8cca2834403b4f3"
+  integrity sha1-hE4fdFpyFfO/5U4u+Myig0QDtPM=
+
 react-native-camera@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/react-native-camera/-/react-native-camera-3.3.2.tgz#fca5c20e8f4cc2695ddd09bc1475343b60251674"

@@ -28,13 +28,11 @@ const styles = StyleSheet.create({
     color: 'black',
   },
   listItem: {
-    height: 50,
     width: '95%',
     alignSelf: 'flex-end',
     borderBottomColor: 'grey',
     borderBottomWidth: StyleSheet.hairlineWidth,
     paddingLeft: 10,
-    justifyContent: 'center',
     backgroundColor: 'rgb(235,232,215)',
   },
   listItemLeftMargin: {

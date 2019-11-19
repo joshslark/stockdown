@@ -4,7 +4,7 @@ import {RNCamera} from 'react-native-camera';
 import {AddAllBarcodesBtn} from '../Buttons'
 import {recognizeSku} from '../utility/SkuParser';
 import styles from './styles';
-import {DataContext} from '../../Home.js'
+import {DataContext} from '../../Provider.js'
 
 export default class Camera extends Component {
   // prevBarcode used to prevent repeat barcodes
@@ -29,7 +29,7 @@ export default class Camera extends Component {
   // that was scanned
   componentDidMount() {
     if (this.state.debug) {
-      sampleBarcodes = [{
+      const sampleBarcodes = [{
 	data: "98071001382486",
 	bounds: {
 	    size: {
@@ -147,7 +147,13 @@ export default class Camera extends Component {
     this.state.paused ? this.pauseCamera() : this.resumeCamera();
   };
 
-  barcodeRecognized = ({barcodes}) => this.setState({barcodes});
+  barcodeRecognized = ({barcodes}) => {
+    if (barcodes.length > 0)
+    {
+      this.camera.current.pausePreview();
+      this.setState({barcodes});
+    }
+  };
 
   textRecognized = object => {
     const {textBlocks} = object;
