@@ -27,6 +27,7 @@
 		901EED16234D53EE00AAC328 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		901EED17234D53EE00AAC328 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
 		901EED18234D53EE00AAC328 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
+		903C67092384746D007E76DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 903C67082384746D007E76DF /* Icon.png */; };
 		90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
 		A07C131CFF89490F8BCC935F /* libGCDWebServers.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7FC3768ADC436795CDC51A /* libGCDWebServers.a */; };
 		B87B25A272183FFE6B71B089 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
@@ -50,27 +51,6 @@
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
 			remoteInfo = "StockDown-tvOS";
 		};
-		9088C67A235A5A630014DB3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F63FF2F01C16405C00B3B8E0;
-			remoteInfo = GCDWebServers;
-		};
-		9088C67C235A5A630014DB3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F63FF2B11C1241E500B3B8E0;
-			remoteInfo = RealmJS;
-		};
-		9088C67E235A5A630014DB3C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 02B58CBC1AE99CEC009B348C;
-			remoteInfo = RealmJSTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -90,13 +70,13 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EDE442FFB42EF77AF29159E /* Pods-StockDown-StockDownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-StockDownTests.debug.xcconfig"; path = "Target Support Files/Pods-StockDown-StockDownTests/Pods-StockDown-StockDownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		47CF1A7E62BC7EB58FA0623C /* Pods-StockDown-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-StockDown-tvOS/Pods-StockDown-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RealmJS.xcodeproj; path = ../node_modules/realm/src/RealmJS.xcodeproj; sourceTree = "<group>"; };
 		577E3D151894CA331309F8E8 /* Pods-StockDown-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-StockDown-tvOSTests/Pods-StockDown-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		69EC93EB82140B3B96DE0F8F /* Pods-StockDown.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown.debug.xcconfig"; path = "Target Support Files/Pods-StockDown/Pods-StockDown.debug.xcconfig"; sourceTree = "<group>"; };
 		759034DB8561C5DDAD123640 /* Pods-StockDown-StockDownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockDown-StockDownTests.release.xcconfig"; path = "Target Support Files/Pods-StockDown-StockDownTests/Pods-StockDown-StockDownTests.release.xcconfig"; sourceTree = "<group>"; };
 		774417ABA67237E5E2C18C13 /* libPods-StockDown.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockDown.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D21287F571761313261ABDC /* libPods-StockDown-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StockDown-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		901EED1E234D53EE00AAC328 /* StockDown-Debug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StockDown-Debug.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		903C67082384746D007E76DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = StockDown/Icon.png; sourceTree = "<group>"; };
 		9062FBEB2308FD1B0020B9D6 /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
 		909028CF231A0F6900604FAD /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
 		90E1C0F923027DCC0058457E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "StockDown/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -181,6 +161,7 @@
 		13B07FAE1A68108700A75B9A /* StockDown */ = {
 			isa = PBXGroup;
 			children = (
+				903C67082384746D007E76DF /* Icon.png */,
 				90E1C0F923027DCC0058457E /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -261,20 +242,9 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		9088C675235A5A630014DB3C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9088C67B235A5A630014DB3C /* libGCDWebServers.a */,
-				9088C67D235A5A630014DB3C /* libRealmJS.a */,
-				9088C67F235A5A630014DB3C /* RealmJSTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B6D3FE884E594EED9131AA57 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -420,12 +390,6 @@
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 9088C675235A5A630014DB3C /* Products */;
-					ProjectRef = 48E0AB20643F4FABBB6DB2AF /* RealmJS.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* StockDown */,
@@ -436,30 +400,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		9088C67B235A5A630014DB3C /* libGCDWebServers.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGCDWebServers.a;
-			remoteRef = 9088C67A235A5A630014DB3C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9088C67D235A5A630014DB3C /* libRealmJS.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRealmJS.a;
-			remoteRef = 9088C67C235A5A630014DB3C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9088C67F235A5A630014DB3C /* RealmJSTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RealmJSTests.xctest;
-			remoteRef = 9088C67E235A5A630014DB3C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		00E356EC1AD99517003FC87E /* Resources */ = {
@@ -473,6 +413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				903C67092384746D007E76DF /* Icon.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,

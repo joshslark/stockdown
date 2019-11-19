@@ -4,7 +4,7 @@ import {Icon} from 'react-native-elements';
 import styles from './styles';
 import {useNewDB, useDBToAddBarcode, useDBToGetSkus, deleteAllSkus} from './SQLiteDB';
 import {DataContext} from '../../Provider.js';
-import {ActivityView} from 'react-native-activity-view');
+import {ActivityView} from 'react-native-activity-view';
 
 export default function Barcodes(props) {
   const context = useContext(DataContext);
