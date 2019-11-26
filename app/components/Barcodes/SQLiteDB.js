@@ -1,8 +1,8 @@
 import React, {useState, useEffect, useContext} from 'react';
 import SQLite from 'react-native-sqlite-storage';
 import {DataContext} from '../../Provider.js';
+import {Product} from './Product';
 SQLite.enablePromise(true);
-
 
 // Check the database to find which product was added last
 export async function useDBToGetLastID () {
@@ -65,7 +65,25 @@ export function useDBToLoadTitle() {
       }
     }
     fetchTitle();
-  }, [context.state.title]);
+  }, [context.state.curListIndex]);
+}
+
+export async function useDBToUpdateProduct(unsavedProduct) {
+  const updateQuery = `
+  UPDATE Product
+  SET description=?, sku=?, upc=?, onhands=?
+  where id=?
+  `;
+  try {
+    const updateResults = await runQueryWithResults(updateQuery, [
+      unsavedProduct.description,
+      unsavedProduct.sku,
+      unsavedProduct.upc,
+      unsavedProduct.onhands,
+      unsavedProduct.id]);
+  } catch (error) {
+    console.warn(error);
+  }
 }
 
 export function useDBToAddBarcode() {
@@ -74,51 +92,91 @@ export function useDBToAddBarcode() {
   const selectQuery = `
   SELECT sku FROM Product ORDER BY id DESC LIMIT 1
   `;
+  const selectProductQuery = `
+  SELECT * FROM Product where sku=?
+  `;
   const insertQuery = `
-  INSERT INTO Product(sku) values (?)
+  INSERT INTO Product(description, sku, upc) values (?, ?, ?)
+  `;
+  const insertListQuery = `
+  INSERT INTO ProductList(product_id, list_id) values (?, ?)
   `;
 
   useEffect(() => {
     const addBarcode = async() => {
       try { 
-        const selectResults = await runQueryWithResults(selectQuery);
-        const lastAddedSku = selectResults.rows.length > 0 ? selectResults.rows.item(0).sku : "";
-        if (context.state.barcode !== "" && context.state.barcode != lastAddedSku) {
-          context.setSkus(Array(...context.state.skus, context.state.barcode));
-          console.log("Inserting sku: " + context.state.barcode);
-          const insertResults = await runQueryWithResults(insertQuery, [context.state.barcode]);
-          setRowsAffected(insertResults.rowsAffected);
-          console.log("Inserted " + rowsAffected + " new row(s)");
+        const selectProductResults = await runQueryWithResults (
+          selectProductQuery,
+          [context.state.barcode]);
+        const dbProduct = new Product();
+        if (selectProductResults.rows.length === 1) {
+
+          Object.assign(dbProduct, selectProductResults.rows.item(0));
+          context.addProduct(dbProduct);
+
+        } else {
+
+          const selectResults = await runQueryWithResults(selectQuery);
+          const lastAddedSku = selectResults.rows.length > 0 ? selectResults.rows.item(0).sku : "";
+          if (context.state.barcode !== "" && context.state.barcode != lastAddedSku) {
+              dbProduct.sku = context.state.barcode;
+              console.log("Inserting product with sku: " + context.state.barcode);
+              const insertResults = await runQueryWithResults(insertQuery, [
+                dbProduct.description,
+                dbProduct.sku,
+                dbProduct.upc
+              ]);
+              setRowsAffected(insertResults.rowsAffected);
+              const selectProductResults = await runQueryWithResults (
+                selectProductQuery,
+                [context.state.barcode]);
+              dbProduct.id = selectProductResults.rows.item(0).id
+          }
         }
+
+        const insertListResults = await runQueryWithResults(insertListQuery, [
+          dbProduct.id,
+          context.state.curListIndex]);
+        console.log("Inserted " + rowsAffected + " new row(s)");
+        context.setLastID(-1);
       } catch (error) {
         console.warn(error);
         throw(error);
       }
     }
+    console.warn("Running");
     addBarcode();
   }, [context.state.barcode]);
 }
 
-export function useDBToGetSkus() {
-  const [skus, setSkus] = useState([]);
-  const [lastID, setLastID] = useState(-1);
-
+export function useDBToGetProducts() {
   const context = useContext(DataContext);
+  const [prevListIndex, setPrevListIndex] = useState(-1);
 
   const selectQuery = `
-  SELECT sku FROM Product
+  SELECT id, description, sku, upc FROM Product
+  JOIN ProductList 
+  ON id=product_id
+  WHERE list_id=?
   `;
 
   useEffect(() => {
     const fetchSkus = async() => {
       const dbLastID = await useDBToGetLastID();
-      if (lastID !== dbLastID) {
+      if (context.state.lastID !== dbLastID 
+        || context.state.curListIndex !== prevListIndex) {
         try {
-          const results = await runQueryWithResults(selectQuery);
-          let skus = results.rows.raw().map((obj) => obj.sku);
-          console.log(skus);
-          context.setSkus(skus);
-          setLastID(dbLastID);
+          const results = await runQueryWithResults(selectQuery,
+          [context.state.curListIndex]);
+          const products = results.rows.raw().map((source) => {
+            const target = new Product();
+            Object.assign(target, source);
+            return target;
+          });
+          console.log(products);
+          context.setProducts(products);
+          context.setLastID(dbLastID);
+          setPrevListIndex(context.state.curListIndex);
         } catch (error) {
           console.warn(error);
         }
@@ -126,15 +184,22 @@ export function useDBToGetSkus() {
     }
 
     fetchSkus();
-    }, [lastID]);
+    }, [context.state.lastID, context.state.products, context.state.curListIndex]);
 }
 
-export async function deleteAllSkus() {
+export async function deleteAllProducts() {
   const deleteQuery = `
   DELETE FROM Product
   `;
   const results = await runQueryWithResults(deleteQuery);
   console.log("Deleted " + results.rowsAffected + " rows");
+}
+
+export async function deleteListContents(listIndex) {
+  const deleteQuery = `
+  DELETE FROM ProductList WHERE list_id=?
+  `
+  const results = await runQueryWithResults(deleteQuery, [listIndex]);
 }
 
 export function useNewDB () {
@@ -194,18 +259,29 @@ async function openDB() {
   try {
     return await SQLite.openDatabase({name: "storage.db", location: 'Documents'});
   } catch (error) {
-   console.log(error); 
+   console.warn(error); 
+  }
+}
+
+async function closeDB() {
+  try {
+    const db = await openDB();
+    await db.close();
+    console.log("Database closed");
+  } catch (error) {
+    console.warn(error);
   }
 }
 
 async function runQueries(queries) {
   const db = await openDB();
   await db.transaction(tx => {
-    queries.forEach((query) => {
+    queries.forEach(async (query) => {
       tx.executeSql(query);
       console.log(query);
     });
   });
+  await closeDB();
 }
 
 async function runQueryWithResults(query, queryArgs) {
@@ -216,6 +292,7 @@ async function runQueryWithResults(query, queryArgs) {
       const [, res] = await tx.executeSql(query, queryArgs);
       results = await res;
     });
+    await closeDB();
   } catch (error) {
     console.warn(error);
     return -1;

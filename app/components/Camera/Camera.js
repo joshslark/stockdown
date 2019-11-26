@@ -12,7 +12,7 @@ export default class Camera extends Component {
     paused: false,
     canDetectBarcode: true,
     canDetectText: false,
-    debug: true,
+    debug: false,
     debugBox: false,
     prevBarcode: 0,
     barcodes: [],
@@ -150,7 +150,7 @@ export default class Camera extends Component {
   barcodeRecognized = ({barcodes}) => {
     if (barcodes.length > 0)
     {
-      this.camera.current.pausePreview();
+      //this.camera.current.pausePreview();
       this.setState({barcodes});
     }
   };

@@ -298,6 +298,8 @@ PODS:
     - React-cxxreact (= 0.61.1)
     - React-jsi (= 0.61.1)
   - React-jsinspector (0.61.1)
+  - react-native-activity-view (0.2.11):
+    - React
   - react-native-camera/BarcodeDetectorMLKit (3.3.2):
     - Firebase/MLVision
     - Firebase/MLVisionBarcodeModel
@@ -377,6 +379,7 @@ DEPENDENCIES:
   - React-jsi (from `../node_modules/react-native/ReactCommon/jsi`)
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
+  - react-native-activity-view (from `../node_modules/react-native-activity-view`)
   - react-native-camera/BarcodeDetectorMLKit (from `../node_modules/react-native-camera`)
   - react-native-camera/TextDetector (from `../node_modules/react-native-camera`)
   - react-native-sqlite-storage (from `../node_modules/react-native-sqlite-storage`)
@@ -448,6 +451,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsiexecutor"
   React-jsinspector:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
+  react-native-activity-view:
+    :path: "../node_modules/react-native-activity-view"
   react-native-camera:
     :path: "../node_modules/react-native-camera"
   react-native-sqlite-storage:
@@ -516,6 +521,7 @@ SPEC CHECKSUMS:
   React-jsi: 61ff417c95e6c3af50fb96399037e80752fb5ce7
   React-jsiexecutor: ee45274419eb95614bbbadb98e20684c5f29996e
   React-jsinspector: 574d597112f9ea3d1b717f6fb62aef764c70dd6f
+  react-native-activity-view: 6e92dc9767dd1524329f5b91c37d22731f39544c
   react-native-camera: 3f7ba7242caaa4b0bcf963504407b3c857e79f34
   react-native-sqlite-storage: a339b4163d54955b57a02a974d3f70a4efa40b1a
   React-RCTActionSheet: af4d951113b1e068bb30611f91b984a7a73597ff
@@ -533,6 +539,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: d8c572ddec8d05b7dba08e4e5f1924004a177078
 
-PODFILE CHECKSUM: 7378cf3dd61fb0e0b356ec8b761bb40679935b69
+PODFILE CHECKSUM: 2ac07a4dcc43ba93930a9a5b39c75ade4d5adf56
 
 COCOAPODS: 1.7.5

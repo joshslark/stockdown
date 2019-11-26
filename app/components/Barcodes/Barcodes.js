@@ -2,9 +2,16 @@ import React, {useState, useEffect, useContext, useRef} from 'react';
 import {View, Button, FlatList, Text, TextInput, TouchableWithoutFeedback} from 'react-native';
 import {Icon} from 'react-native-elements';
 import styles from './styles';
-import {useNewDB, useDBToAddBarcode, useDBToGetSkus, deleteAllSkus} from './SQLiteDB';
+import {
+  useNewDB, 
+  useDBToAddBarcode, 
+  useDBToGetProducts, 
+  useDBToUpdateProduct,
+  deleteAllProducts, 
+  deleteListContents,
+  closeDB} from './SQLiteDB';
 import {DataContext} from '../../Provider.js';
-import {ActivityView} from 'react-native-activity-view';
+import ActivityView from 'react-native-activity-view';
 
 export default function Barcodes(props) {
   const context = useContext(DataContext);
@@ -20,7 +27,6 @@ export default function Barcodes(props) {
             prevArr[props.index] = true;
             return prevArr;
           });
-          // Todo cause rerender
           context.renderProduct();
         }}>
         <View
@@ -122,11 +128,13 @@ export default function Barcodes(props) {
               type='material'
               size={25}
               onPress={() => {
+                useDBToUpdateProduct(
+                  context.state.products[
+                    editing.findIndex(x=>x)])
                 setEditing((prevArr) => {
                   prevArr[prevArr.findIndex(x=>x)] = false;
                   return prevArr;
                 });
-                // Todo Cause a rerender of list
                 context.renderProduct();
               }}
               containerStyle={{
@@ -153,31 +161,36 @@ export default function Barcodes(props) {
   }
 
   function handleDeletion() {
-    // Todo remove products from list
-    //deleteAllSkus();
-    //context.setSkus([]);
+    deleteListContents(context.state.curListIndex);
+    context.setProducts([]);
   }
 
   function share() {
-    //createShareDBFile();
     ActivityView.show({
-      text: "Sample Text"
+      file: "storage.db"
     });
   }
 
   useNewDB();
-  //useDBToGetSkus();
-  //useDBToAddBarcode();
+  useDBToGetProducts();
+  useDBToAddBarcode();
 
-  // Todo figure out when to scroll
   useEffect(() => {
     flatlistRef.current.scrollToEnd({animated: true});
-  }, [context.state]);
+  }, [context.state.products, context.state.lastID]);
 
   return (
     <View style={styles.listContainer}>
-      <View style={{backgroundColor: 'white'}}>
+      <View style={{backgroundColor: 'white', flexDirection: 'row', justifyContent: 'center'}}>
+        <Button 
+          onPress={() => {
+            context.setAreTablesLoaded(false);
+            context.setLastID(-1);  
+            context.setCurrentList(context.state.curListIndex);
+          }} 
+          title={'Refresh'} />
         <Button onPress={() => share()} title={'Share this list'} />
+        <Button onPress={() => handleDeletion()} title={"Clear List"} />
       </View>
       <View style={{flex:1}}>
         <FlatList

@@ -2,12 +2,17 @@ platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
 target 'StockDown' do
+  project 'StockDown',
+    'Release' => :release,
+    'Debug' => :debug
+
   # Pods for StockDown
   pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
     'TextDetector',
     'BarcodeDetectorMLKit'
     ]
   pod 'Firebase/Core'
+  pod 'react-native-activity-view', path: '../node_modules/react-native-activity-view'
   pod 'react-native-sqlite-storage', path: '../node_modules/react-native-sqlite-storage'
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
