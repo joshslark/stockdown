@@ -22,6 +22,9 @@ export default function Barcodes(props) {
     return (
       <TouchableWithoutFeedback 
         onPress={() => {
+          useDBToUpdateProduct(
+            context.state.products[
+              editing.findIndex(x=>x)])
           setEditing(prevArr => {
             prevArr[prevArr.findIndex(x => x)] = false;
             prevArr[props.index] = true;
@@ -65,8 +68,10 @@ export default function Barcodes(props) {
   function Properties(props) {
     const [values, setValues] = useState(props.product); 
     const [isSelected, setIsSelected] = useState(props.product.getPropertyNames());
-    const refs = Array(props.product.getPropertyNames().length).fill(useRef(null));
-    // Todo onChangeText and value reference props.product
+    const refs = Array(props.product.getPropertyNames().length)
+      .fill(0)
+      .map((_, index) => useRef(index));
+
     return (
       <>
         <View style={{
@@ -93,7 +98,7 @@ export default function Barcodes(props) {
                   <TextInput
                     ref={refs[index]}
                     onSubmitEditing={(event) => {
-                      refs[(index+1)%5].current.focus();
+                      refs[(index+1)%props.product.getPropertyNames().length].current.focus();
                     }}
                     placeholder={"Insert "+ name + " here"}
                     style={{
@@ -104,7 +109,7 @@ export default function Barcodes(props) {
                     }}
                     clearButtonMode={"always"}
                     onChangeText={(text) => {props.product[name] = text}}
-                    defaultValue={props.product[name]}
+                    defaultValue={props.product[name].toString()}
                   />
                 </View>
               </View>))

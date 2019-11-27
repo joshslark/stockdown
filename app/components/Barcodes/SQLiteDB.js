@@ -71,16 +71,36 @@ export function useDBToLoadTitle() {
 export async function useDBToUpdateProduct(unsavedProduct) {
   const updateQuery = `
   UPDATE Product
-  SET description=?, sku=?, upc=?, onhands=?
+  SET description=?, sku=?, upc=?, onhands=?, location_id=?
   where id=?
   `;
+  const newShelfQuery = `
+  INSERT INTO Shelf(name) values (?)
+  `;
+  const checkForShelfQuery = `
+  SELECT id, name from Shelf WHERE name=?
+  `;
+
   try {
+    const shelfResults = await runQueryWithResults(checkForShelfQuery, [
+      unsavedProduct.location]);
+
+    if (shelfResults.rows.length === 0) {
+      const createShelfResults = await runQueryWithResults(newShelfQuery, [
+        unsavedProduct.location]);
+    }
+
+    const amendedShelfResults = await runQueryWithResults(checkForShelfQuery, [
+      unsavedProduct.location]);
+
     const updateResults = await runQueryWithResults(updateQuery, [
       unsavedProduct.description,
       unsavedProduct.sku,
       unsavedProduct.upc,
       unsavedProduct.onhands,
+      amendedShelfResults.rows.item(0).id,
       unsavedProduct.id]);
+
   } catch (error) {
     console.warn(error);
   }
@@ -95,9 +115,22 @@ export function useDBToAddBarcode() {
   const selectProductQuery = `
   SELECT * FROM Product where sku=?
   `;
-  const insertQuery = `
-  INSERT INTO Product(description, sku, upc) values (?, ?, ?)
+
+  const listCheckQuery = `
+  SELECT Product.id FROM Product 
+  JOIN ProductList 
+  ON Product.id = ProductList.product_id
+  WHERE ProductList.list_id=?
+  AND Product.sku=?
   `;
+
+  const insertQuery = `
+  INSERT INTO Product(description, sku, upc, onhands, location_id) values (?, ?, ?, 0, 0)
+  `;
+  const initShelfQuery = `
+  INSERT INTO Shelf(id,name) values (0, "00-000")
+  `;
+
   const insertListQuery = `
   INSERT INTO ProductList(product_id, list_id) values (?, ?)
   `;
@@ -105,20 +138,38 @@ export function useDBToAddBarcode() {
   useEffect(() => {
     const addBarcode = async() => {
       try { 
+        await runQueryWithResults(initShelfQuery);
+
+        // Do we have a product with this sku?
         const selectProductResults = await runQueryWithResults (
           selectProductQuery,
           [context.state.barcode]);
+
+        // Is this product sku already in the current list?
+        const listCheckResults = await runQueryWithResults(listCheckQuery, [
+            context.state.barcode,
+            context.state.curListIndex
+          ]);
+        
         const dbProduct = new Product();
+
         if (selectProductResults.rows.length === 1) {
 
           Object.assign(dbProduct, selectProductResults.rows.item(0));
-          context.addProduct(dbProduct);
+
+          if (listCheckResults.rows.length > 0) {
+            // Sku found in current list
+            // Highlight sku somehow
+          } else {
+            context.addProduct(dbProduct);
+            await runQueryWithResults(insertListQuery, [
+              dbProduct.id,
+              context.state.curListIndex]);
+          }
 
         } else {
-
-          const selectResults = await runQueryWithResults(selectQuery);
-          const lastAddedSku = selectResults.rows.length > 0 ? selectResults.rows.item(0).sku : "";
-          if (context.state.barcode !== "" && context.state.barcode != lastAddedSku) {
+          
+          if (context.state.barcode !== "") {
               dbProduct.sku = context.state.barcode;
               console.log("Inserting product with sku: " + context.state.barcode);
               const insertResults = await runQueryWithResults(insertQuery, [
@@ -131,20 +182,18 @@ export function useDBToAddBarcode() {
                 selectProductQuery,
                 [context.state.barcode]);
               dbProduct.id = selectProductResults.rows.item(0).id
+              context.addProduct(dbProduct);
+              await runQueryWithResults(insertListQuery, [
+                dbProduct.id,
+                context.state.curListIndex]);
           }
         }
-
-        const insertListResults = await runQueryWithResults(insertListQuery, [
-          dbProduct.id,
-          context.state.curListIndex]);
-        console.log("Inserted " + rowsAffected + " new row(s)");
         context.setLastID(-1);
       } catch (error) {
         console.warn(error);
         throw(error);
       }
     }
-    console.warn("Running");
     addBarcode();
   }, [context.state.barcode]);
 }
@@ -154,10 +203,12 @@ export function useDBToGetProducts() {
   const [prevListIndex, setPrevListIndex] = useState(-1);
 
   const selectQuery = `
-  SELECT id, description, sku, upc FROM Product
+  SELECT Product.id, description, sku, upc, onhands, Shelf.name AS location FROM Product
   JOIN ProductList 
-  ON id=product_id
-  WHERE list_id=?
+  ON Product.id=ProductList.product_id
+  JOIN Shelf
+  ON Shelf.id=Product.location_id
+  WHERE ProductList.list_id=?
   `;
 
   useEffect(() => {
@@ -209,8 +260,10 @@ export function useNewDB () {
       description TEXT, 
       id INTEGER NOT NULL,
       onhands INTEGER,
-      upc INTEGER,
+      upc TEXT,
       sku TEXT,
+      location_id integer,
+      FOREIGN KEY ("location_id") REFERENCES Shelf("id"),
       PRIMARY KEY("id"))
     `,`
     CREATE TABLE IF NOT EXISTS Shelf(
@@ -227,7 +280,8 @@ export function useNewDB () {
       list_id INTEGER NOT NULL, 
       product_id INTEGER NOT NULL, 
       FOREIGN KEY("list_id") REFERENCES List("id"),
-      FOREIGN KEY ("product_id") REFERENCES Product("id"))
+      FOREIGN KEY ("product_id") REFERENCES Product("id"),
+      PRIMARY KEY("list_id", "product_id"))
     `,`
     CREATE TABLE IF NOT EXISTS Pallet( 
       id INTEGER NOT NULL, 
