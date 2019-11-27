@@ -24,11 +24,10 @@
   [FIRApp configure];
   NSURL *jsCodeLocation;
   #ifdef DEBUG
-    jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios&dev=true"];
+    jsCodeLocation =  [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
   #else
     jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
   #endif
-  //jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 
   self.rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
                                               moduleName:@"StockDown"
