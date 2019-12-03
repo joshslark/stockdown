@@ -84,14 +84,14 @@ export default function Barcodes(props) {
                 flexDirection: 'row',
                 flex: 1,
               }}>
-                <Text style={{fontSize:25, flex:1, textAlign:'right', alignSelf:'center'}}>
+                <Text style={{fontSize:25, flex:0.8, textAlign:'right', alignSelf:'center'}}>
                   {name}
                 </Text>
                 <View style={{
                   flex:1.5, 
                   borderWidth: 1, 
                   borderRadius: 5, 
-                  padding:5, 
+                  padding:0, 
                   margin: 10, 
                   marginRight: 0,
                   borderColor:'grey'}}>
@@ -102,8 +102,9 @@ export default function Barcodes(props) {
                     }}
                     placeholder={"Insert "+ name + " here"}
                     style={{
-                      fontSize:20, 
                       flex:0.8, 
+                      padding:0,
+                      fontSize:20, 
                       paddingLeft:10, 
                       color: 'black', 
                     }}
@@ -193,9 +194,10 @@ export default function Barcodes(props) {
             context.setLastID(-1);  
             context.setCurrentList(context.state.curListIndex);
           }} 
+          color={'green'}
           title={'Refresh'} />
         <Button onPress={() => share()} title={'Share this list'} />
-        <Button onPress={() => handleDeletion()} title={"Clear List"} />
+        <Button onPress={() => handleDeletion()} color={'red'} title={"Clear List"} />
       </View>
       <View style={{flex:1}}>
         <FlatList

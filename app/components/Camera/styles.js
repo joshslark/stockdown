@@ -2,7 +2,8 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   cameraBox: {
-    flex: 1.5,
+    flex: 1,
+    height: 100,
   },
   debugBarcodeBox: {
     position: 'absolute',

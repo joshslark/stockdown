@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, Button} from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import {AddAllBarcodesBtn} from '../Buttons'
 import {recognizeSku} from '../utility/SkuParser';
@@ -170,24 +170,27 @@ export default class Camera extends Component {
   render() {
     const {canDetectBarcode, canDetectText, debugBox} = this.state;
     return (
-      <RNCamera
-        ref={this.camera}
-        captureAudio={false}
-        style={styles.cameraBox}
-        onTextRecognized={canDetectText ? this.textRecognized : null}
-        onGoogleVisionBarcodesDetected={
-          canDetectBarcode ? this.barcodeRecognized : null
-        }
-        googleVisionBarcodeType={
-          RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All
-        }
-        testID="rncamera"
+      <View style={{flex: 1.5, overflow: 'hidden'}}>
+        <RNCamera
+          ref={this.camera}
+          captureAudio={false}
+          ratio={"1:1"}
+          style={styles.cameraBox}
+          onTextRecognized={canDetectText ? this.textRecognized : null}
+          onGoogleVisionBarcodesDetected={
+            canDetectBarcode ? this.barcodeRecognized : null
+          }
+          googleVisionBarcodeType={
+            RNCamera.Constants.GoogleVisionBarcodeDetection.BarcodeType.All
+          }
+          testID="rncamera"
         >
-        {!!canDetectBarcode && this.renderBarcodes()}
-        {!!canDetectText && this.renderTextblocks()}
-        {!!debugBox && <View style={styles.debugBarcodeBox} />}
-        {this.state.selectedText.length > 0 && this.renderSelectedText()}
-      </RNCamera>
+          {!!canDetectBarcode && this.renderBarcodes()}
+          {!!canDetectText && this.renderTextblocks()}
+          {!!debugBox && <View style={styles.debugBarcodeBox} />}
+          {this.state.selectedText.length > 0 && this.renderSelectedText()}
+        </RNCamera>
+      </View>
     );
   }
 }

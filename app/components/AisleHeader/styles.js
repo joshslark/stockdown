@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   listHeaderText: {
     alignSelf: 'center',
     fontSize: 36,
-    padding: 10,
+    padding: 0,
     color: 'black',
   },
   listItem: {
