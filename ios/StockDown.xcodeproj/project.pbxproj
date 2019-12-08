@@ -13,7 +13,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		9029D5AE2385EADB00741AC2 /* StorageDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 9029D5AD2385EADB00741AC2 /* StorageDocument.m */; };
-		9029D5B323860C8900741AC2 /* ActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9029D5B223860C8900741AC2 /* ActivityView.m */; };
 		903C67092384746D007E76DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 903C67082384746D007E76DF /* Icon.png */; };
 		90E1C0FA23027DCC0058457E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90E1C0F923027DCC0058457E /* GoogleService-Info.plist */; };
 		B87B25A272183FFE6B71B089 /* libPods-StockDown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 774417ABA67237E5E2C18C13 /* libPods-StockDown.a */; };
@@ -64,8 +63,6 @@
 		8BD4722EC5B64209847DDEDD /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		9029D5AC2385E9F300741AC2 /* StorageDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StorageDocument.h; path = StockDown/StorageDocument.h; sourceTree = "<group>"; };
 		9029D5AD2385EADB00741AC2 /* StorageDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = StorageDocument.m; path = StockDown/StorageDocument.m; sourceTree = "<group>"; };
-		9029D5B223860C8900741AC2 /* ActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityView.m; sourceTree = "<group>"; };
-		9029D5B423860C8F00741AC2 /* ActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityView.h; sourceTree = "<group>"; };
 		903C67082384746D007E76DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = StockDown/Icon.png; sourceTree = "<group>"; };
 		9062FBEB2308FD1B0020B9D6 /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
 		909028CF231A0F6900604FAD /* DebugInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DebugInfo.plist; path = /Users/joshuaclark/dev/stockdown/ios/DebugInfo.plist; sourceTree = "<absolute>"; };
@@ -125,8 +122,6 @@
 			children = (
 				903C67082384746D007E76DF /* Icon.png */,
 				90E1C0F923027DCC0058457E /* GoogleService-Info.plist */,
-				9029D5B423860C8F00741AC2 /* ActivityView.h */,
-				9029D5B223860C8900741AC2 /* ActivityView.m */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -503,7 +498,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				9029D5B323860C8900741AC2 /* ActivityView.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				9029D5AE2385EADB00741AC2 /* StorageDocument.m in Sources */,
 			);

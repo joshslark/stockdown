@@ -54,12 +54,3 @@ target 'StockDown' do
 
 use_native_modules!
 end
-  
-target 'StockDown-tvOS' do
-  # Pods for HelloWorld-tvOS
-
-  target 'StockDown-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
