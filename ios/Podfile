@@ -7,13 +7,13 @@ target 'StockDown' do
     'Debug' => :debug
 
   # StockDown Dependencies
-  #pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
-  #  'TextDetector',
-  #  'BarcodeDetectorMLKit'
-  #]
+  pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
+    'TextDetector',
+    'BarcodeDetectorMLKit'
+  ]
   pod 'Firebase/Core'
-  #pod 'react-native-activity-view', path: '../node_modules/react-native-activity-view'
-  #pod 'react-native-sqlite-storage', path: '../node_modules/react-native-sqlite-storage'
+  pod 'react-native-activity-view', path: '../node_modules/react-native-activity-view'
+  pod 'react-native-sqlite-storage', path: '../node_modules/react-native-sqlite-storage'
 
   # React Native Dependencies
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
