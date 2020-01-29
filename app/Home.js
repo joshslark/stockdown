@@ -13,7 +13,7 @@ export default class Home extends Component {
     return (
       <View style={{flex: 1, width: '100%', height: '100%'}}>
         {
-          //<View style={{backgroundColor: 'rgb(233,207,178)', height: '5%'}} />
+          <View style={{backgroundColor: 'rgb(233,207,178)', height: '5%'}} />
         }
         <AisleHeader />
         <Barcodes />
