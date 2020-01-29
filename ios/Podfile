@@ -6,16 +6,16 @@ target 'StockDown' do
     'Release' => :release,
     'Debug' => :debug
 
-  # Pods for StockDown
-  pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
-    'TextDetector',
-    'BarcodeDetectorMLKit'
-    ]
+  # StockDown Dependencies
+  #pod 'react-native-camera', path: '../node_modules/react-native-camera', subspecs: [
+  #  'TextDetector',
+  #  'BarcodeDetectorMLKit'
+  #]
   pod 'Firebase/Core'
-  pod 'react-native-activity-view', path: '../node_modules/react-native-activity-view'
-  pod 'react-native-sqlite-storage', path: '../node_modules/react-native-sqlite-storage'
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  #pod 'react-native-activity-view', path: '../node_modules/react-native-activity-view'
+  #pod 'react-native-sqlite-storage', path: '../node_modules/react-native-sqlite-storage'
 
+  # React Native Dependencies
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -47,10 +47,5 @@ target 'StockDown' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'StockDownTests' do
-    inherit! :complete
-    # Pods for testing
-  end
-
-use_native_modules!
+  use_native_modules!
 end
